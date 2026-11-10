@@ -1,5 +1,7 @@
 """pydantic-ai, Agent with OpenAIResponsesModel, agent.run_stream(...) as its docs show. Tool calls go to a
-registered tool, which records the name and arguments it was called with and then stops the run."""
+registered tool, which records the name and arguments it was called with and then stops the run.
+Status comes from the final ModelResponse.finish_reason, pydantic-ai's own normalised field (found by
+repro/pydantic_ai_incomplete.py after the first scoring run): stop -> completed, length -> incomplete, error -> failed."""
 import asyncio, json
 from _common import emit, guard
 from pydantic_ai import Agent
@@ -7,6 +9,7 @@ from pydantic_ai.models.openai import OpenAIResponsesModel
 from pydantic_ai.providers.openai import OpenAIProvider
 
 seen = {}
+FR = {"stop": "completed", "length": "incomplete", "error": "failed"}
 
 
 class Stop(Exception):
@@ -30,7 +33,8 @@ async def run(base):
     try:
         async with agent.run_stream("hi") as result:
             text = await result.get_output()
-        emit(text=text or None, status=None)
+            fr = getattr(result.all_messages()[-1], "finish_reason", None)
+        emit(text=text or None, status=FR.get(fr))
     except Stop:
         emit(function_call=seen["fc"], status=None)
 

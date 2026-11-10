@@ -38,3 +38,23 @@ below with the reason.
    - `response_failed` passes if the library raises or reports `failed`. The case was written to catch "reports success";
      raising is a normal way to report failure, and the locked rule (status must equal `failed`) marked raising as a fail.
 Both changes were made after seeing the first run, so the locked scores stay in the scorecard.
+
+## Changes after Critic's review (Nov 10 2026, about 06:30 Paris time)
+- **One cut-off rule for everyone (adjusted rule 3).** `response_incomplete` passes if the user can tell the answer was
+  cut off: status `incomplete`, or an error whose message says incomplete or max_output_tokens. Before this, raising
+  passed on `response_failed` but not on `response_incomplete`, which was uneven. Losing the partial text is now a
+  separate, unscored note. The locked scores are unchanged and still shown.
+- **Standalone repros in `repro/`.** Each script calls the library directly against the fake server with no adapter
+  code (`repro/run_all.sh`, output in `repro/OUTPUT.txt`). They confirmed library behaviour for openresponses-python
+  (crashes on `data: [DONE]`; the same case without `[DONE]` works; it separately fails on multi-line `data:`),
+  llama-index (`response_failed` returns an empty message with no error; the failure is only in the pass-through
+  `chunk.raw` provider object), openai-python (raises on `response.incomplete` after the text was streamed, and on a
+  vendor event before `response.created`) and openai-agents (raises with "status=incomplete").
+- **Two adapter bugs found by the repros, fixed and rerun.** pydantic-ai *does* expose a status: the final
+  `ModelResponse.finish_reason` is `length` on a cut-off answer. The adapter now maps stop/length/error to
+  completed/incomplete/failed, and pydantic-ai is no longer marked as having no status. llama-index only carries the
+  full message on the `response.completed` chunk, so the adapter now falls back to the joined text deltas when that
+  chunk never arrives (this fixes the ", " result on the truncated case). Both libraries were rescored at 120 s
+  (`logs/score_rerun_pydantic_llama.log`).
+- **Wording.** The scorecard is "behaviour against our 17 spec-derived cases", not a quality ranking; several
+  libraries wrap the OpenAI SDK, so their results are not independent. Failures sharing one error count as one root cause.

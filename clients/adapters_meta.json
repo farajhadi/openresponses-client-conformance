@@ -1,1 +1,12 @@
-{"pydantic-ai": {"exposes_status": false}, "openai-agents": {"exposes_status": false}, "llama-index": {"exposes_status": false}}
+{
+ "pydantic-ai": {
+  "exposes_status": true,
+  "status_source": "ModelResponse.finish_reason"
+ },
+ "openai-agents": {
+  "exposes_status": false
+ },
+ "llama-index": {
+  "exposes_status": false
+ }
+}
