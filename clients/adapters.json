@@ -1,0 +1,38 @@
+{
+ "openai-python": [
+  "envs/openai/bin/python",
+  "clients/py/openai_sdk.py"
+ ],
+ "openresponses-client": [
+  "envs/openresponses-client/bin/python",
+  "clients/py/openresponses_client_lib.py"
+ ],
+ "openresponses-python": [
+  "envs/openresponses-python/bin/python",
+  "clients/py/openresponses_python.py"
+ ],
+ "litellm": [
+  "envs/litellm/bin/python",
+  "clients/py/litellm_lib.py"
+ ],
+ "langchain-openai": [
+  "envs/langchain-openai/bin/python",
+  "clients/py/langchain_openai_lib.py"
+ ],
+ "pydantic-ai": [
+  "envs/pydantic-ai/bin/python",
+  "clients/py/pydantic_ai_lib.py"
+ ],
+ "openai-agents": [
+  "envs/openai-agents/bin/python",
+  "clients/py/openai_agents_lib.py"
+ ],
+ "any-llm": [
+  "envs/any-llm/bin/python",
+  "clients/py/any_llm_lib.py"
+ ],
+ "llama-index": [
+  "envs/llama-index/bin/python",
+  "clients/py/llama_index_lib.py"
+ ]
+}
