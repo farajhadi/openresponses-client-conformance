@@ -985,74 +985,74 @@
  },
  "pydantic-ai": {
   "baseline": {
-   "verdict": "fail",
+   "verdict": "pass",
    "got": {
     "text": "Hello, world!",
     "function_call": null,
-    "status": null,
+    "status": "completed",
     "raised": null
    },
-   "secs": 12.21
+   "secs": 10.59
   },
   "no_done_sentinel": {
-   "verdict": "fail",
+   "verdict": "pass",
    "got": {
     "text": "Hello, world!",
     "function_call": null,
-    "status": null,
+    "status": "completed",
     "raised": null
    },
-   "secs": 14.15
+   "secs": 9.89
   },
   "unknown_vendor_event": {
-   "verdict": "fail",
+   "verdict": "pass",
    "got": {
     "text": "Hello, world!",
     "function_call": null,
-    "status": null,
+    "status": "completed",
     "raised": null
    },
-   "secs": 13.63
+   "secs": 10.61
   },
   "unknown_vendor_event_first": {
-   "verdict": "fail",
+   "verdict": "pass",
    "got": {
     "text": "Hello, world!",
     "function_call": null,
-    "status": null,
+    "status": "completed",
     "raised": null
    },
-   "secs": 13.5
+   "secs": 10.4
   },
   "unknown_item_type": {
-   "verdict": "fail",
+   "verdict": "pass",
    "got": {
     "text": "Hello, world!",
     "function_call": null,
-    "status": null,
+    "status": "completed",
     "raised": null
    },
-   "secs": 12.65
+   "secs": 10.2
   },
   "extra_fields": {
-   "verdict": "fail",
+   "verdict": "pass",
    "got": {
     "text": "Hello, world!",
     "function_call": null,
-    "status": null,
+    "status": "completed",
     "raised": null
    },
-   "secs": 11.73
+   "secs": 8.74
   },
   "logprobs_absent": {
-   "verdict": "fail",
+   "verdict": "pass",
    "got": {
     "text": "Hello, world!",
     "function_call": null,
-    "status": null,
+    "status": "completed",
     "raised": null
    },
-   "secs": 9.83
+   "secs": 9.0
   },
   "function_call_split_args": {
    "verdict": "fail",
@@ -1065,7 +1065,7 @@
     "status": null,
     "raised": null
    },
-   "secs": 8.53
+   "secs": 8.36
   },
   "function_call_unicode_args": {
    "verdict": "fail",
@@ -1078,77 +1078,77 @@
     "status": null,
     "raised": null
    },
-   "secs": 8.06
+   "secs": 9.61
   },
   "byte_by_byte": {
-   "verdict": "fail",
+   "verdict": "pass",
    "got": {
     "text": "Hello, world!",
     "function_call": null,
-    "status": null,
+    "status": "completed",
     "raised": null
    },
-   "secs": 9.19
+   "secs": 11.08
   },
   "utf8_split_across_chunks": {
-   "verdict": "fail",
+   "verdict": "pass",
    "got": {
     "text": "مرحبا بالعالم 😀",
     "function_call": null,
-    "status": null,
+    "status": "completed",
     "raised": null
    },
-   "secs": 10.8
+   "secs": 9.6
   },
   "crlf_newlines": {
-   "verdict": "fail",
+   "verdict": "pass",
    "got": {
     "text": "Hello, world!",
     "function_call": null,
-    "status": null,
+    "status": "completed",
     "raised": null
    },
-   "secs": 57.5
+   "secs": 9.47
   },
   "cr_newlines": {
-   "verdict": "fail",
+   "verdict": "pass",
    "got": {
     "text": "Hello, world!",
     "function_call": null,
-    "status": null,
+    "status": "completed",
     "raised": null
    },
-   "secs": 14.54
+   "secs": 10.66
   },
   "comment_lines": {
-   "verdict": "fail",
+   "verdict": "pass",
    "got": {
     "text": "Hello, world!",
     "function_call": null,
-    "status": null,
+    "status": "completed",
     "raised": null
    },
-   "secs": 11.61
+   "secs": 11.08
   },
   "multiline_data": {
-   "verdict": "fail",
+   "verdict": "pass",
    "got": {
     "text": "Hello, world!",
     "function_call": null,
-    "status": null,
+    "status": "completed",
     "raised": null
    },
-   "secs": 12.35
+   "secs": 10.34
   },
   "multiple_content_parts": {
-   "verdict": "fail",
+   "verdict": "pass",
    "got": {
     "text": "Hello, world!",
     "function_call": null,
-    "status": null,
+    "status": "completed",
     "raised": null
    },
-   "secs": 11.43
+   "secs": 10.26
   },
   "response_failed": {
    "verdict": "fail",
@@ -1158,17 +1158,17 @@
     "status": null,
     "raised": "ModelServerError: status_code: 500, model_name: fake-model, body: {'code': 'server_error', 'message': 'model crashed'}"
    },
-   "secs": 11.06
+   "secs": 10.16
   },
   "response_incomplete": {
-   "verdict": "fail",
+   "verdict": "pass",
    "got": {
     "text": "Hello, wor",
     "function_call": null,
-    "status": null,
+    "status": "incomplete",
     "raised": null
    },
-   "secs": 10.84
+   "secs": 11.78
   },
   "truncated_stream": {
    "verdict": "fail",
@@ -1178,7 +1178,7 @@
     "status": null,
     "raised": null
    },
-   "secs": 10.81
+   "secs": 10.58
   }
  },
  "openai-agents": {
@@ -1586,7 +1586,7 @@
     "status": null,
     "raised": null
    },
-   "secs": 22.32
+   "secs": 18.18
   },
   "no_done_sentinel": {
    "verdict": "fail",
@@ -1596,7 +1596,7 @@
     "status": null,
     "raised": null
    },
-   "secs": 25.48
+   "secs": 19.59
   },
   "unknown_vendor_event": {
    "verdict": "fail",
@@ -1606,7 +1606,7 @@
     "status": null,
     "raised": null
    },
-   "secs": 25.07
+   "secs": 20.93
   },
   "unknown_vendor_event_first": {
    "verdict": "fail",
@@ -1616,7 +1616,7 @@
     "status": null,
     "raised": null
    },
-   "secs": 21.57
+   "secs": 23.27
   },
   "unknown_item_type": {
    "verdict": "fail",
@@ -1626,7 +1626,7 @@
     "status": null,
     "raised": null
    },
-   "secs": 22.03
+   "secs": 24.84
   },
   "extra_fields": {
    "verdict": "fail",
@@ -1636,7 +1636,7 @@
     "status": null,
     "raised": null
    },
-   "secs": 24.03
+   "secs": 25.84
   },
   "logprobs_absent": {
    "verdict": "fail",
@@ -1646,7 +1646,7 @@
     "status": null,
     "raised": null
    },
-   "secs": 21.35
+   "secs": 26.14
   },
   "function_call_split_args": {
    "verdict": "fail",
@@ -1659,7 +1659,7 @@
     "status": null,
     "raised": null
    },
-   "secs": 21.74
+   "secs": 22.82
   },
   "function_call_unicode_args": {
    "verdict": "fail",
@@ -1672,7 +1672,7 @@
     "status": null,
     "raised": null
    },
-   "secs": 21.61
+   "secs": 25.19
   },
   "byte_by_byte": {
    "verdict": "fail",
@@ -1682,7 +1682,7 @@
     "status": null,
     "raised": null
    },
-   "secs": 23.86
+   "secs": 25.66
   },
   "utf8_split_across_chunks": {
    "verdict": "fail",
@@ -1692,7 +1692,7 @@
     "status": null,
     "raised": null
    },
-   "secs": 23.18
+   "secs": 24.13
   },
   "crlf_newlines": {
    "verdict": "fail",
@@ -1702,7 +1702,7 @@
     "status": null,
     "raised": null
    },
-   "secs": 23.14
+   "secs": 21.92
   },
   "cr_newlines": {
    "verdict": "fail",
@@ -1712,7 +1712,7 @@
     "status": null,
     "raised": null
    },
-   "secs": 22.46
+   "secs": 23.24
   },
   "comment_lines": {
    "verdict": "fail",
@@ -1722,7 +1722,7 @@
     "status": null,
     "raised": null
    },
-   "secs": 21.71
+   "secs": 21.09
   },
   "multiline_data": {
    "verdict": "fail",
@@ -1732,7 +1732,7 @@
     "status": null,
     "raised": null
    },
-   "secs": 24.27
+   "secs": 479.67
   },
   "multiple_content_parts": {
    "verdict": "fail",
@@ -1742,7 +1742,7 @@
     "status": null,
     "raised": null
    },
-   "secs": 24.12
+   "secs": 27.8
   },
   "response_failed": {
    "verdict": "fail",
@@ -1752,17 +1752,17 @@
     "status": null,
     "raised": null
    },
-   "secs": 25.67
+   "secs": 21.16
   },
   "response_incomplete": {
    "verdict": "fail",
    "got": {
-    "text": null,
+    "text": "Hello, wor",
     "function_call": null,
     "status": null,
     "raised": null
    },
-   "secs": 25.59
+   "secs": 23.54
   },
   "truncated_stream": {
    "verdict": "fail",
@@ -1772,7 +1772,7 @@
     "status": null,
     "raised": null
    },
-   "secs": 23.18
+   "secs": 20.18
   }
  }
 }

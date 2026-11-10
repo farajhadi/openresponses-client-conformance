@@ -1,0 +1,20 @@
+{"case": "baseline", "stream": true}
+06:24:09 "POST /case/baseline/v1/responses HTTP/1.1" 200 -
+{"case": "no_done_sentinel", "stream": true}
+06:24:09 "POST /case/no_done_sentinel/v1/responses HTTP/1.1" 200 -
+{"case": "multiline_data", "stream": true}
+06:24:10 "POST /case/multiline_data/v1/responses HTTP/1.1" 200 -
+{"case": "response_failed", "stream": true}
+06:24:24 "POST /case/response_failed/v1/responses HTTP/1.1" 200 -
+{"case": "response_incomplete", "stream": true}
+06:24:26 "POST /case/response_incomplete/v1/responses HTTP/1.1" 200 -
+{"case": "response_incomplete", "stream": true}
+06:24:37 "POST /case/response_incomplete/v1/responses HTTP/1.1" 200 -
+{"case": "response_incomplete", "stream": false}
+06:24:39 "POST /case/response_incomplete/v1/responses HTTP/1.1" 200 -
+{"case": "response_incomplete", "stream": true}
+06:24:44 "POST /case/response_incomplete/v1/responses HTTP/1.1" 200 -
+{"case": "unknown_vendor_event_first", "stream": true}
+06:24:46 "POST /case/unknown_vendor_event_first/v1/responses HTTP/1.1" 200 -
+{"case": "response_incomplete", "stream": true}
+06:24:56 "POST /case/response_incomplete/v1/responses HTTP/1.1" 200 -

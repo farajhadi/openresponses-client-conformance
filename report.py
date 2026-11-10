@@ -32,6 +32,8 @@ def adjusted(lib, cid, got):
         return got.get("status") == "incomplete" or ("incomplete" in msg or "max_output_tokens" in msg)
     if not META.get(lib, {}).get("exposes_status", True) and cid != "response_incomplete":
         exp.pop("status", None)
+    if META.get(lib, {}).get("status_on_tool_calls", True) is False and "function_call" in exp:
+        exp.pop("status", None)  # our adapter interrupts the run in the tool, so there is no status to read
     for k, v in exp.items():
         if k == "error_or_failed":
             if (raised or got.get("status") == "failed") != v:

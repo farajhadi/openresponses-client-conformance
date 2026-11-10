@@ -58,3 +58,7 @@ Both changes were made after seeing the first run, so the locked scores stay in 
   (`logs/score_rerun_pydantic_llama.log`).
 - **Wording.** The scorecard is "behaviour against our 17 spec-derived cases", not a quality ranking; several
   libraries wrap the OpenAI SDK, so their results are not independent. Failures sharing one error count as one root cause.
+- **Follow-up to the pydantic-ai fix.** Once pydantic-ai was marked as having a status, its two tool-call cases failed
+  on status alone, because our adapter stops the run inside the tool before pydantic-ai builds a final response. That's
+  our adapter's doing, so the status check is skipped on pydantic-ai's tool-call cases (`status_on_tool_calls: false`
+  in `clients/adapters_meta.json`); the function name and arguments are still checked.

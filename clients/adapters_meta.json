@@ -1,7 +1,9 @@
 {
  "pydantic-ai": {
   "exposes_status": true,
-  "status_source": "ModelResponse.finish_reason"
+  "status_source": "ModelResponse.finish_reason",
+  "status_on_tool_calls": false,
+  "note": "The adapter stops the run inside the tool, before pydantic-ai builds its final response, so no status exists to read on tool-call cases."
  },
  "openai-agents": {
   "exposes_status": false

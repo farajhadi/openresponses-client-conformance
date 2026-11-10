@@ -1,0 +1,2 @@
+ERROR: Cannot install langchain-openai==1.7.4, litellm==1.108.4, llama-index-llms-openai==0.8.3, openai-agents==0.24.0 and openai==3.48.0 because these package versions have conflicting dependencies.
+ERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts
