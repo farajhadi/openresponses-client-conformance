@@ -516,3 +516,41 @@
 06:43:41 "POST /case/response_incomplete/v1/responses HTTP/1.1" 200 -
 {"case": "truncated_stream", "stream": true}
 06:44:03 "POST /case/truncated_stream/v1/responses HTTP/1.1" 200 -
+{"case": "baseline", "stream": true}
+06:59:29 "POST /case/baseline/v1/responses HTTP/1.1" 200 -
+{"case": "no_done_sentinel", "stream": true}
+06:59:49 "POST /case/no_done_sentinel/v1/responses HTTP/1.1" 200 -
+{"case": "unknown_vendor_event", "stream": true}
+07:00:07 "POST /case/unknown_vendor_event/v1/responses HTTP/1.1" 200 -
+{"case": "unknown_vendor_event_first", "stream": true}
+07:00:27 "POST /case/unknown_vendor_event_first/v1/responses HTTP/1.1" 200 -
+{"case": "unknown_item_type", "stream": true}
+07:00:49 "POST /case/unknown_item_type/v1/responses HTTP/1.1" 200 -
+{"case": "extra_fields", "stream": true}
+07:01:12 "POST /case/extra_fields/v1/responses HTTP/1.1" 200 -
+{"case": "logprobs_absent", "stream": true}
+07:01:35 "POST /case/logprobs_absent/v1/responses HTTP/1.1" 200 -
+{"case": "function_call_split_args", "stream": true}
+07:01:52 "POST /case/function_call_split_args/v1/responses HTTP/1.1" 200 -
+{"case": "function_call_unicode_args", "stream": true}
+07:02:10 "POST /case/function_call_unicode_args/v1/responses HTTP/1.1" 200 -
+{"case": "byte_by_byte", "stream": true}
+07:02:29 "POST /case/byte_by_byte/v1/responses HTTP/1.1" 200 -
+{"case": "utf8_split_across_chunks", "stream": true}
+07:02:48 "POST /case/utf8_split_across_chunks/v1/responses HTTP/1.1" 200 -
+{"case": "crlf_newlines", "stream": true}
+07:03:06 "POST /case/crlf_newlines/v1/responses HTTP/1.1" 200 -
+{"case": "cr_newlines", "stream": true}
+07:03:22 "POST /case/cr_newlines/v1/responses HTTP/1.1" 200 -
+{"case": "comment_lines", "stream": true}
+07:03:42 "POST /case/comment_lines/v1/responses HTTP/1.1" 200 -
+{"case": "multiline_data", "stream": true}
+07:03:58 "POST /case/multiline_data/v1/responses HTTP/1.1" 200 -
+{"case": "multiple_content_parts", "stream": true}
+07:04:12 "POST /case/multiple_content_parts/v1/responses HTTP/1.1" 200 -
+{"case": "response_failed", "stream": true}
+07:04:33 "POST /case/response_failed/v1/responses HTTP/1.1" 200 -
+{"case": "response_incomplete", "stream": true}
+07:04:53 "POST /case/response_incomplete/v1/responses HTTP/1.1" 200 -
+{"case": "truncated_stream", "stream": true}
+07:05:19 "POST /case/truncated_stream/v1/responses HTTP/1.1" 200 -
