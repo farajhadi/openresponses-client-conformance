@@ -1,0 +1,726 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>Specification</title><meta property="og:title" content="Specification"><meta property="og:type" content="website"><meta property="og:image" content="/img/meta.png"><meta property="og:url" content="http://localhost:4321/specification/"><link rel="preload" href="/fonts/openaiSansVariableVF.woff2" as="font" type="font/woff2" crossorigin><link rel="icon" type="image/svg+xml" href="/svg/favicon.svg"><vercel-analytics data-props="{}" data-params="{}" data-pathname="/specification/"></vercel-analytics> <script type="module">var f="@vercel/analytics",l="1.6.1",w=()=>{window.va||(window.va=function(...r){(window.vaq=window.vaq||[]).push(r)})};function d(){return typeof window<"u"}function u(){try{const e="production"}catch{}return"production"}function v(e="auto"){if(e==="auto"){window.vam=u();return}window.vam=e}function m(){return(d()?window.vam:u())||"production"}function c(){return m()==="development"}function b(e,r){if(!e||!r)return e;let n=e;try{const t=Object.entries(r);for(const[a,i]of t)if(!Array.isArray(i)){const o=s(i);o.test(n)&&(n=n.replace(o,`/[${a}]`))}for(const[a,i]of t)if(Array.isArray(i)){const o=s(i.join("/"));o.test(n)&&(n=n.replace(o,`/[...${a}]`))}return n}catch{return e}}function s(e){return new RegExp(`/${h(e)}(?=[/?#]|$)`)}function h(e){return e.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")}function y(e){return e.scriptSrc?e.scriptSrc:c()?"https://va.vercel-scripts.com/v1/script.debug.js":e.basePath?`${e.basePath}/insights/script.js`:"/_vercel/insights/script.js"}function g(e={debug:!0}){var r;if(!d())return;v(e.mode),w(),e.beforeSend&&((r=window.va)==null||r.call(window,"beforeSend",e.beforeSend));const n=y(e);if(document.head.querySelector(`script[src*="${n}"]`))return;const t=document.createElement("script");t.src=n,t.defer=!0,t.dataset.sdkn=f+(e.framework?`/${e.framework}`:""),t.dataset.sdkv=l,e.disableAutoTrack&&(t.dataset.disableAutoTrack="1"),e.endpoint?t.dataset.endpoint=e.endpoint:e.basePath&&(t.dataset.endpoint=`${e.basePath}/insights`),e.dsn&&(t.dataset.dsn=e.dsn),t.onerror=()=>{const a=c()?"Please check if any ad blockers are enabled and try again.":"Be sure to enable Web Analytics for your project and deploy again. See https://vercel.com/docs/analytics/quickstart for more information.";console.log(`[Vercel Web Analytics] Failed to load script from ${n}. ${a}`)},c()&&e.debug===!1&&(t.dataset.debug="false"),document.head.appendChild(t)}function p({route:e,path:r}){var n;(n=window.va)==null||n.call(window,"pageview",{route:e,path:r})}function k(){try{return}catch{}}customElements.define("vercel-analytics",class extends HTMLElement{constructor(){super();try{const r=JSON.parse(this.dataset.props??"{}"),n=JSON.parse(this.dataset.params??"{}");g({...r,disableAutoTrack:!0,framework:"astro",basePath:k(),beforeSend:window.webAnalyticsBeforeSend});const t=this.dataset.pathname;p({route:b(t??"",n),path:t})}catch(r){throw new Error(`Failed to parse WebAnalytics properties: ${r}`)}}});</script><link rel="stylesheet" href="/_astro/reference.CKv9QH0-.css"><script type="module" src="/_astro/page.BNCUKVbs.js"></script></head> <body class="bg-orange-50 text-slate-900"> <div class="min-h-screen"> <header class="site-header"> <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6"> <div class="flex items-center gap-2 sm:gap-3"> <a href="/" class="block h-5 w-4 shrink-0 overflow-hidden sm:w-auto"> <img src="/svg/openresponses.svg" class="h-5 w-auto max-w-none" alt="Open Responses"> </a> <details id="spec-version-picker" class="version-picker not-prose" data-astro-cid-bvxz23l4> <summary aria-label="Open Responses version: 2026-04-24" data-astro-cid-bvxz23l4> <span class="hidden sm:inline" data-astro-cid-bvxz23l4>Version</span> <span class="version-number" data-astro-cid-bvxz23l4>2026-04-24</span> <span class="version-caret" aria-hidden="true" data-astro-cid-bvxz23l4>▾</span> </summary> <nav class="version-menu" aria-label="Specification versions" data-astro-cid-bvxz23l4> <a href="/specification/2026-04-24" aria-current="page" data-astro-cid-bvxz23l4> <span class="version-number" data-astro-cid-bvxz23l4>2026-04-24</span> <span class="version-current" data-astro-cid-bvxz23l4>Current</span> </a><a href="/specification/2026-01-15" data-astro-cid-bvxz23l4> <span class="version-number" data-astro-cid-bvxz23l4>2026-01-15</span>  </a> </nav> </details>  <script type="module">const t=document.querySelector("#spec-version-picker"),a=t?.querySelector("summary");if(t&&a){const n=Array.from(t.querySelectorAll("nav a")),s=()=>n.forEach(e=>{e.hash=window.location.hash}),i=(e=!1)=>{t.open=!1,e&&a.focus()};s(),window.addEventListener("hashchange",s),t.addEventListener("toggle",()=>{t.open&&s()}),document.addEventListener("pointerdown",e=>{t.contains(e.target)||i()}),t.addEventListener("focusout",e=>{t.contains(e.relatedTarget)||i()}),n.forEach(e=>e.addEventListener("click",()=>i())),t.addEventListener("keydown",e=>{if(e.ctrlKey||e.metaKey||e.altKey||e.shiftKey)return;if(e.key==="Escape"&&t.open){e.preventDefault(),i(!0);return}const r=n.indexOf(document.activeElement);let o;if(e.key==="ArrowDown")o=(r+1)%n.length;else if(e.key==="ArrowUp")o=r<0?n.length-1:(r-1+n.length)%n.length;else if(e.key==="Home"&&r>=0)o=0;else if(e.key==="End"&&r>=0)o=n.length-1;else return;e.preventDefault(),t.open=!0,n[o]?.focus()})}</script> </div> <div class="flex flex-row-reverse items-center gap-3 text-sm lg:flex-row"> <a class="items-center gap-2 rounded-full font-semibold text-slate-600 transition hover:text-slate-900 hidden sm:inline-flex" href="https://github.com/openresponses/openresponses" target="_blank" rel="noreferrer"> <img src="/svg/github.svg" alt="" class="h-6 w-6"> <p class="hidden lg:block">GitHub</p> </a> <div class="lg:hidden"> <div class="relative"> <button id="docs-mobile-nav-trigger" class="inline-flex max-w-32 items-center gap-2 rounded-lg border border-slate-200 px-4 py-1 text-sm font-medium text-slate-700 transition hover:border-slate-300" aria-haspopup="menu" aria-expanded="false"> <span class="line-clamp-1 text-sm text-ellipsis"> Specification </span> <span class="text-lg text-slate-400">▾</span> </button> <div id="docs-mobile-nav-menu" class="absolute right-0 z-20 mt-2 hidden min-w-[200px] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg" role="menu"> <div class="px-2 py-2"> <a class="block rounded-xl px-3 py-2 text-sm text-slate-700" href="/" role="menuitem"> Overview </a><a class="block rounded-xl px-3 py-2 text-sm text-slate-700 bg-slate-100 text-slate-900" href="/specification" role="menuitem"> Specification </a><a class="block rounded-xl px-3 py-2 text-sm text-slate-700" href="/reference" role="menuitem"> Reference </a><a class="block rounded-xl px-3 py-2 text-sm text-slate-700" href="/compliance" role="menuitem"> Acceptance Tests </a><a class="block rounded-xl px-3 py-2 text-sm text-slate-700" href="/governance" role="menuitem"> Governance </a><a class="block rounded-xl px-3 py-2 text-sm text-slate-700" href="/changelog" role="menuitem"> Changelog </a>  </div> </div> </div> </div> </div> </div> <script>
+    (() => {
+      const navBar = document.querySelector(".site-header");
+      const setScrolled = () => {
+        navBar.classList.toggle("is-scrolled", window.scrollY > 0);
+      };
+      setScrolled();
+      window.addEventListener("scroll", setScrolled, { passive: true });
+
+      const trigger = document.getElementById("docs-mobile-nav-trigger");
+      const menu = document.getElementById("docs-mobile-nav-menu");
+      if (trigger && menu) {
+        const toggleMenu = (open) => {
+          menu.classList.toggle("hidden", !open);
+          trigger.setAttribute("aria-expanded", open ? "true" : "false");
+        };
+        trigger.addEventListener("click", (event) => {
+          event.preventDefault();
+          const isOpen = !menu.classList.contains("hidden");
+          toggleMenu(!isOpen);
+        });
+        menu.addEventListener("click", (event) => {
+          if (event.target.closest("a")) toggleMenu(false);
+        });
+        document.addEventListener("click", (event) => {
+          if (!menu.contains(event.target) && !trigger.contains(event.target)) {
+            toggleMenu(false);
+          }
+        });
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") toggleMenu(false);
+        });
+      }
+    })();
+  </script> </header> <main class="relative z-0 mx-auto grid max-w-6xl gap-10 px-4 py-10 sm:px-6 lg:grid-cols-[200px_1fr_220px]"> <aside class="hidden lg:block"> <div class="sticky top-24 space-y-2 text-sm text-slate-600"> <nav class="space-y-1"> <a class="block rounded-lg px-3 py-1.5 transition hover:text-amber-500" href="/"> Overview </a><a class="block rounded-lg px-3 py-1.5 transition hover:text-amber-500 rounded bg-slate-100 font-medium text-slate-900 shadow-inner outline outline-slate-300" href="/specification" aria-current="page"> Specification </a><a class="block rounded-lg px-3 py-1.5 transition hover:text-amber-500" href="/reference"> Reference </a><a class="block rounded-lg px-3 py-1.5 transition hover:text-amber-500" href="/compliance"> Acceptance Tests </a><a class="block rounded-lg px-3 py-1.5 transition hover:text-amber-500" href="/governance"> Governance </a><a class="block rounded-lg px-3 py-1.5 transition hover:text-amber-500" href="/changelog"> Changelog </a> </nav>  </div> </aside> <section class="min-w-0" data-toc-content="true">  <article class="prose prose-slate article-container max-w-none">  <h1 class="page-title">Specification</h1>
+<p><strong>Open Responses</strong> is an open-source specification and ecosystem for building <strong>multi-provider, interoperable LLM interfaces</strong> based on the OpenAI Responses API. It defines a <strong>shared schema</strong>, <strong>client library</strong>, and <strong>tooling layer</strong> that enable a unified experience for calling language models, streaming results, and composing agentic workflows—independent of provider.</p>
+<p>The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “NOT RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in <a href="https://datatracker.ietf.org/doc/html/bcp14"><strong>BCP 14</strong></a> [<a href="https://datatracker.ietf.org/doc/html/rfc2119"><strong>RFC2119</strong></a>] [<a href="https://datatracker.ietf.org/doc/html/rfc8174"><strong>RFC8174</strong></a>] when, and only when, they appear in all capitals, as shown here.</p>
+<h1 id="motivation-and-overview">Motivation and Overview</h1>
+<p>Modern LLM systems have converged on similar primitives—messages, function calls, tool usage, and multimodal inputs—but each provider encodes them differently. Open Responses standardizes these concepts, enabling:</p>
+<ul>
+<li><strong>One spec, many providers:</strong> Describe inputs/outputs once; run on OpenAI, Anthropic, Gemini, or local models.</li>
+<li><strong>Composable agentic loops:</strong> Unified streaming, tool invocation, and message orchestration.</li>
+<li><strong>Easier evaluation and routing:</strong> Compare providers, route requests, and log results through a shared schema.</li>
+<li><strong>Blueprints for provider APIs:</strong> Labs and model providers wanting to expose their APIs in a common format can easily do so.</li>
+</ul>
+<h1 id="key-principles">Key Principles</h1>
+<h2 id="agentic-loop">Agentic Loop</h2>
+<p>All models, to some extent, exhibit agency — the ability to perceive input, reason, act through tools, and reflect on outcomes.</p>
+<p>Open Responses at is core is designed to expose the power of this agentic loop to developers, making requests that allow the model to do multiple things and yield back a result, whether this is developer-hosted tool calls where control is yielded back to the user, or provider-hosted tools where control is held by the model provider until the model signals an exit criteria.</p>
+<p>Open Responses defines a common pattern for defining control flow in the agent loop, a set of item definitions for developer-controlled tools, and pattern for defining provider and router-hosted tools.</p>
+<h2 id="items--items">Items → Items</h2>
+<p><strong>Items</strong> are the fundamental unit of context in Open Responses: they represent an atomic unit of model output, tool invocation, or reasoning state. Items are bidirectional, they can be provided as inputs to the model, or as outputs from the model.</p>
+<p>Each item type has a defined schema that binds it and contains properties specific to it’s unique purpose.</p>
+<p>Open Responses defines a common set of items supported by a quorum of model providers, and defines how provider-specific item types can be defined.</p>
+<h2 id="semantic-events">Semantic events</h2>
+<p>Streaming is modeled as a series of semantic events, not raw text or object deltas.</p>
+<p>Events describe meaningful transitions. They are either state transitions–<code>response.in_progress</code>, <code>response.completed</code>–or they can represent a delta from a previous state–<code>response.output_item.added</code>, <code>response.output_text.delta</code>.</p>
+<p>Open Responses defines a common set of streaming events supported by a quorum of model providers, and defines how provider-specific streaming events can be defined.</p>
+<h2 id="state-machines">State machines</h2>
+<p>Objects in Open Responses are state machines, that is, they can live in one of a finite number of states, such as <code>in_progress</code>, <code>completed</code>, or <code>failed</code>. The spec defines the set of valid states for each state machine in the API.</p>
+<h1 id="specification">Specification</h1>
+<h2 id="http-requests">HTTP Requests</h2>
+<p>All messages MUST follow the HTTP protocol.</p>
+<p><strong>Headers</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Header</strong></th><th>Description</th><th><strong>Required</strong></th></tr></thead><tbody><tr><td><code>Authorization</code></td><td>Authorization token identifying the developer</td><td>Yes</td></tr><tr><td><code>Content-Type</code></td><td>Describes to the server <strong>what kind of data is in the body of the request</strong> and how to interpret it.</td><td>Yes</td></tr></tbody></table>
+<p><strong>HTTP Request Bodies</strong></p>
+<p>Clients MUST send request bodies encoded as <code>application/json</code></p>
+<h2 id="http-responses">HTTP Responses</h2>
+<p><strong>Headers</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Header</strong></th><th>Description</th><th><strong>Required</strong></th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td>Describes to the client <strong>what kind of data is in the body of the response</strong> and how to interpret it.</td><td>Yes</td></tr></tbody></table>
+<p><strong>HTTP Response Bodies</strong></p>
+<p>When not streaming, servers MUST return data only as <code>application/json</code>.</p>
+<p><strong>Streaming HTTP Responses</strong></p>
+<p>When streaming, servers MUST return header <code>Content-Type: text/event-stream</code> , with individual <code>data</code> objects returned as JSON-encoded strings. The stream MUST include a terminal response event (<code>response.completed</code>, <code>response.failed</code>, or <code>response.incomplete</code>). Servers MAY send the literal string <code>[DONE]</code> after that event. Clients MUST also accept the stream ending after the terminal response event without <code>[DONE]</code>.</p>
+<p>The <code>event</code> field MUST match the <code>type</code> in the event body. Servers SHOULD NOT use <code>id</code>.</p>
+<div class="expressive-code"><link rel="stylesheet" href="/_astro/ec.j8ru5.css"/><script type="module" src="/_astro/ec.0vx5m.js"></script><figure class="frame"><figcaption class="header"></figcaption><pre data-language="tsx"><code><div class="ec-line"><div class="code"><span style="--0:#C8C8C8">event</span><span style="--0:#D4D4D4">: </span><span style="--0:#9CDCFE">response</span><span style="--0:#D4D4D4">.</span><span style="--0:#9CDCFE">output_text</span><span style="--0:#D4D4D4">.</span><span style="--0:#9CDCFE">delta</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C8C8C8">data</span><span style="--0:#D4D4D4">: { </span><span style="--0:#CE9178">&quot;type&quot;</span><span style="--0:#D4D4D4">:</span><span style="--0:#CE9178">&quot;response.output_text.delta&quot;</span><span style="--0:#D4D4D4">,</span><span style="--0:#CE9178">&quot;sequence_number&quot;</span><span style="--0:#D4D4D4">:</span><span style="--0:#B5CEA8">10</span><span style="--0:#D4D4D4">,</span><span style="--0:#CE9178">&quot;item_id&quot;</span><span style="--0:#D4D4D4">:</span><span style="--0:#CE9178">&quot;msg_07315d23576898080068e95daa2e34819685fb0a98a0503f78&quot;</span><span style="--0:#D4D4D4">,</span><span style="--0:#CE9178">&quot;output_index&quot;</span><span style="--0:#D4D4D4">:</span><span style="--0:#B5CEA8">0</span><span style="--0:#D4D4D4">,</span><span style="--0:#CE9178">&quot;content_index&quot;</span><span style="--0:#D4D4D4">:</span><span style="--0:#B5CEA8">0</span><span style="--0:#D4D4D4">,</span><span style="--0:#CE9178">&quot;delta&quot;</span><span style="--0:#D4D4D4">:</span><span style="--0:#CE9178">&quot; a&quot;</span><span style="--0:#D4D4D4">,</span><span style="--0:#CE9178">&quot;logprobs&quot;</span><span style="--0:#D4D4D4">:[],</span><span style="--0:#CE9178">&quot;obfuscation&quot;</span><span style="--0:#D4D4D4">:</span><span style="--0:#CE9178">&quot;Wd6S45xQ7SyQLT&quot;</span><span style="--0:#D4D4D4">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="event: response.output_text.deltadata: { &#34;type&#34;:&#34;response.output_text.delta&#34;,&#34;sequence_number&#34;:10,&#34;item_id&#34;:&#34;msg_07315d23576898080068e95daa2e34819685fb0a98a0503f78&#34;,&#34;output_index&#34;:0,&#34;content_index&#34;:0,&#34;delta&#34;:&#34; a&#34;,&#34;logprobs&#34;:[],&#34;obfuscation&#34;:&#34;Wd6S45xQ7SyQLT&#34;}"><div></div></button></div></figure></div>
+<h2 id="websocket-transport">WebSocket Transport</h2>
+<span class="not-prose inline-flex my-2"> <a href="/changelog#2026-04-24" class="rounded border border-slate-200 bg-slate-100 px-2 py-0.5 font-mono text-[11px] leading-4 font-normal text-slate-600 no-underline">
+Added 2026-04-24 </a> </span>
+<p>Servers MAY expose the Responses API over a persistent WebSocket connection at the same <code>/v1/responses</code> resource. A WebSocket connection is a transport mode for the Responses API; it does not define a separate response object model.</p>
+<p>Clients MUST start each turn by sending a JSON object with <code>type: &quot;response.create&quot;</code>. The remaining fields follow the standard response creation request body, except HTTP/SSE transport-specific fields such as <code>stream</code>, <code>stream_options</code>, and <code>background</code> MUST NOT be sent on WebSocket requests. Servers MUST treat a WebSocket <code>response.create</code> message as a request to create a response on the active connection.</p>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="json"><code><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;response.create&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;model&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;gpt-openresponses-1&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;store&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#569CD6">false</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;input&quot;</span><span style="--0:#D4D4D4">: [</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;message&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;role&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;user&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;content&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;Find the bug in fizz_buzz().&quot;</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">  </span></span><span style="--0:#D4D4D4">],</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;tools&quot;</span><span style="--0:#D4D4D4">: []</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="{  &#34;type&#34;: &#34;response.create&#34;,  &#34;model&#34;: &#34;gpt-openresponses-1&#34;,  &#34;store&#34;: false,  &#34;input&#34;: [    {      &#34;type&#34;: &#34;message&#34;,      &#34;role&#34;: &#34;user&#34;,      &#34;content&#34;: &#34;Find the bug in fizz_buzz().&#34;    }  ],  &#34;tools&#34;: []}"><div></div></button></div></figure></div>
+<p>Servers MUST send response progress over the WebSocket using the same streaming event objects defined for streaming HTTP responses. Event ordering, <code>sequence_number</code>, output item lifecycle, content part lifecycle, and terminal response events have the same meaning on both transports.</p>
+<p>A single WebSocket connection MUST process at most one in-flight response at a time. Servers MAY accept multiple <code>response.create</code> messages over one connection, but they MUST process those messages sequentially. Servers MUST NOT multiplex multiple in-flight responses over one connection; clients that need parallel runs SHOULD use multiple WebSocket connections.</p>
+<h3 id="websocket-continuation">WebSocket Continuation</h3>
+<p>WebSocket continuation uses the same <code>previous_response_id</code> semantics as HTTP. A follow-up <code>response.create</code> message SHOULD include only new input items, such as tool outputs and the next user message, plus the <code>previous_response_id</code> of the prior response.</p>
+<p>Servers SHOULD keep the most recent previous-response state in connection-local memory for the active WebSocket. This connection-local state enables lower-latency continuation and allows <code>store=false</code>, including zero data retention deployments, to continue on the same socket without writing response state to persisted storage. With <code>store=true</code>, servers MAY hydrate older response IDs from persisted state when available. With <code>store=false</code>, there is no persisted fallback; if the referenced response is not available from connection-local state, the server MUST fail the turn with an error whose code is <code>previous_response_not_found</code>.</p>
+<p>If a continuation turn fails with a <code>4xx</code> or <code>5xx</code> error, the server MUST evict the referenced <code>previous_response_id</code> from the connection-local cache. A later attempt to continue from that evicted <code>store=false</code> response ID on the same connection MUST fail with <code>previous_response_not_found</code>.</p>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="json"><code><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;response.create&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;model&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;gpt-openresponses-1&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;store&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#569CD6">false</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;previous_response_id&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;resp_123&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;input&quot;</span><span style="--0:#D4D4D4">: [</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;function_call_output&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;call_id&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;call_123&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;output&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;tool result&quot;</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">},</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;message&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;role&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;user&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;content&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;Now optimize it.&quot;</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">  </span></span><span style="--0:#D4D4D4">]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="{  &#34;type&#34;: &#34;response.create&#34;,  &#34;model&#34;: &#34;gpt-openresponses-1&#34;,  &#34;store&#34;: false,  &#34;previous_response_id&#34;: &#34;resp_123&#34;,  &#34;input&#34;: [    {      &#34;type&#34;: &#34;function_call_output&#34;,      &#34;call_id&#34;: &#34;call_123&#34;,      &#34;output&#34;: &#34;tool result&#34;    },    {      &#34;type&#34;: &#34;message&#34;,      &#34;role&#34;: &#34;user&#34;,      &#34;content&#34;: &#34;Now optimize it.&#34;    }  ]}"><div></div></button></div></figure></div>
+<h3 id="websocket-compaction">WebSocket Compaction</h3>
+<p>The standalone <code>/responses/compact</code> endpoint returns a compacted input window, not a response ID. After standalone compaction, clients MUST start a new response on the WebSocket by omitting <code>previous_response_id</code> or setting it to <code>null</code>, passing the compacted output as the base <code>input</code>, and appending the latest user or tool items.</p>
+<h3 id="websocket-reconnects">WebSocket Reconnects</h3>
+<p>WebSocket connections are limited to 60 minutes. When the limit is reached, servers MUST return an error whose code is <code>websocket_connection_limit_reached</code> and clients SHOULD open a new WebSocket connection.</p>
+<p>When a connection closes or hits the 60-minute limit, clients SHOULD recover with one of these patterns:</p>
+<ul>
+<li>If the prior response is persisted with <code>store=true</code> and the response ID remains valid, continue with <code>previous_response_id</code> and new input items.</li>
+<li>If the chain cannot continue, such as with <code>store=false</code>, zero data retention, or <code>previous_response_not_found</code>, start a new response by omitting <code>previous_response_id</code> or setting it to <code>null</code> and send the full input context for the next turn.</li>
+<li>If the client compacted context with <code>/responses/compact</code>, use the returned compacted window as the base <code>input</code> for that new response, then append the latest user or tool items.</li>
+</ul>
+<h3 id="websocket-errors">WebSocket Errors</h3>
+<p>WebSocket failures MUST be sent as a JSON <code>error</code> envelope with a <code>status</code> code and an <code>error.code</code>. Clients SHOULD handle at least <code>previous_response_not_found</code> and <code>websocket_connection_limit_reached</code>.</p>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="json"><code><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;error&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;status&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#B5CEA8">400</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;error&quot;</span><span style="--0:#D4D4D4">: {</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;code&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;previous_response_not_found&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;message&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;Previous response with id &#39;resp_abc&#39; not found.&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;param&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;previous_response_id&quot;</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">  </span></span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="{  &#34;type&#34;: &#34;error&#34;,  &#34;status&#34;: 400,  &#34;error&#34;: {    &#34;code&#34;: &#34;previous_response_not_found&#34;,    &#34;message&#34;: &#34;Previous response with id 'resp_abc' not found.&#34;,    &#34;param&#34;: &#34;previous_response_id&#34;  }}"><div></div></button></div></figure></div>
+<h2 id="items">Items</h2>
+<p>Items are the core unit of context in Open Responses. Open Responses defines a few types of items that are common to all providers, such as <code>message</code> or <code>function_call</code>, and defines how to define additional, provider-specific item types. There are some general principles that apply to all items:</p>
+<h3 id="items-are-polymorphic">Items are polymorphic</h3>
+<p>Item shapes can vary depending on what purpose they serve. A <code>message</code> item, for instance, has a different shape from a <code>function_call</code> , and so on. Items are discriminated based on the <code>type</code> field</p>
+<details><summary><strong>Example: Message</strong></summary><div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="json"><code><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;message&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;id&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;msg_01A2B3C4D5E6F7G8H9I0J1K2L3M4N5O6&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;role&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;assistant&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;status&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;completed&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;content&quot;</span><span style="--0:#D4D4D4">: [</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;output_text&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;text&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;Hello! How can I assist you today?&quot;</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">  </span></span><span style="--0:#D4D4D4">]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="{  &#34;type&#34;: &#34;message&#34;,  &#34;id&#34;: &#34;msg_01A2B3C4D5E6F7G8H9I0J1K2L3M4N5O6&#34;,  &#34;role&#34;: &#34;assistant&#34;,  &#34;status&#34;: &#34;completed&#34;,  &#34;content&#34;: [    {      &#34;type&#34;: &#34;output_text&#34;,      &#34;text&#34;: &#34;Hello! How can I assist you today?&#34;    }  ]}"><div></div></button></div></figure></div></details>
+<details><summary><strong>Example: Function Call</strong></summary><div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="json"><code><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;function_call&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;id&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;fc_00123xyzabc9876def0gh1ij2klmno345&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;name&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;sendEmail&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;call_id&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;call_987zyx654wvu321&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;arguments&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;{</span><span style="--0:#D7BA7D">\&quot;</span><span style="--0:#CE9178">recipient</span><span style="--0:#D7BA7D">\&quot;</span><span style="--0:#CE9178">:</span><span style="--0:#D7BA7D">\&quot;</span><span style="--0:#CE9178">jane.doe@example.com</span><span style="--0:#D7BA7D">\&quot;</span><span style="--0:#CE9178">,</span><span style="--0:#D7BA7D">\&quot;</span><span style="--0:#CE9178">subject</span><span style="--0:#D7BA7D">\&quot;</span><span style="--0:#CE9178">:</span><span style="--0:#D7BA7D">\&quot;</span><span style="--0:#CE9178">Meeting Reminder</span><span style="--0:#D7BA7D">\&quot;</span><span style="--0:#CE9178">,</span><span style="--0:#D7BA7D">\&quot;</span><span style="--0:#CE9178">body</span><span style="--0:#D7BA7D">\&quot;</span><span style="--0:#CE9178">:</span><span style="--0:#D7BA7D">\&quot;</span><span style="--0:#CE9178">Don&#39;t forget about our meeting tomorrow at 10am.</span><span style="--0:#D7BA7D">\&quot;</span><span style="--0:#CE9178">}&quot;</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="{  &#34;type&#34;: &#34;function_call&#34;,  &#34;id&#34;: &#34;fc_00123xyzabc9876def0gh1ij2klmno345&#34;,  &#34;name&#34;: &#34;sendEmail&#34;,  &#34;call_id&#34;: &#34;call_987zyx654wvu321&#34;,  &#34;arguments&#34;: &#34;{\&#34;recipient\&#34;:\&#34;jane.doe@example.com\&#34;,\&#34;subject\&#34;:\&#34;Meeting Reminder\&#34;,\&#34;body\&#34;:\&#34;Don't forget about our meeting tomorrow at 10am.\&#34;}&#34;}"><div></div></button></div></figure></div></details>
+<h3 id="items-are-state-machines">Items are state machines</h3>
+<p>In Open Responses, all items have a lifecycle. They can be <code>in_progress</code> if the model is sampling the current item, <code>incomplete</code> if the model exhausts its token budget before sampling finishes, or <code>completed</code> when they are fully done sampling.</p>
+<p>It’s important to note that while items follow a state machine model—transitioning through these defined states—this does not necessarily mean they are stateful in the sense of being persisted to disk or stored long-term. The state machine describes the item’s status within the response flow, but persistence is a separate concern and is not implied by the item’s state transitions.</p>
+<p>All item types should have these three basic status:</p>
+<ul>
+<li><code>in_progress</code> - the model is currently emitting tokens belonging to this item</li>
+<li><code>incomplete</code> - the model has exhausted its token budget while emitting tokens belonging to this item. This is a terminal state. If an item ends in a terminal state, it MUST be the last item emitted, and the containing response also MUST be in an <code>incomplete</code> state.</li>
+<li><code>completed</code> - the model has finished emitting tokens containing the item, and / or a tool call has completed successfully. This is a terminal status and no updates may be made to the item after the item has moved into this state.</li>
+</ul>
+<h3 id="items-are-streamable">Items are streamable</h3>
+<p>As items change states or values w/in an item change, Open Responses defines how those updates should be communicated in a response stream.</p>
+<ol>
+<li>The first event MUST always be <code>response.output_item.added</code>. The item is echoed in the payload with as much detail as is available at that time. For <code>messages</code>, this means at least the <code>role</code>, and for <code>function_call</code>, this is at least the <code>name</code>. All fields not marked nullable MUST have a value. Use zero values where applicable.</li>
+</ol>
+<details><summary><strong>Example</strong></summary><div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="json"><code><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;response.output_item.added&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;sequence_number&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#B5CEA8">11</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;output_index&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#B5CEA8">3</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;item&quot;</span><span style="--0:#D4D4D4">: {</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;id&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;msg_0f7983f1618f89d20068efe9b45d748191a5239d49c2971a65&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;message&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;status&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;in_progress&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;content&quot;</span><span style="--0:#D4D4D4">: [],</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;role&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;assistant&quot;</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">  </span></span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="{  &#34;type&#34;: &#34;response.output_item.added&#34;,  &#34;sequence_number&#34;: 11,  &#34;output_index&#34;: 3,  &#34;item&#34;: {    &#34;id&#34;: &#34;msg_0f7983f1618f89d20068efe9b45d748191a5239d49c2971a65&#34;,    &#34;type&#34;: &#34;message&#34;,    &#34;status&#34;: &#34;in_progress&#34;,    &#34;content&#34;: [],    &#34;role&#34;: &#34;assistant&#34;  }}"><div></div></button></div></figure></div></details>
+<ol start="2">
+<li>Some items have <em>streamable content</em>. Usually this is text being emitted by the model, such as in the case of a <code>message</code>. Such content MUST be backed by a content part. The first event in such cases MUST be <code>response.content_part.added</code> , followed by events representing the delta to the content part, eg <code>response.&lt;content_type&gt;.delta</code> . The delta events MAY be repeated many times, and end with <code>response.&lt;content_type&gt;.done</code>. The content part is then closed with <code>response.content_part.done</code>.</li>
+</ol>
+<details><summary><strong>Example</strong></summary><div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="json"><code><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;response.content_part.added&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;sequence_number&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#B5CEA8">12</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;item_id&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;msg_0f7983f1618f89d20068efe9b45d748191a5239d49c2971a65&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;output_index&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#B5CEA8">3</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;content_index&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#B5CEA8">0</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;part&quot;</span><span style="--0:#D4D4D4">: {</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;output_text&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;annotations&quot;</span><span style="--0:#D4D4D4">: [],</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;text&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;&quot;</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">  </span></span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;response.output_text.delta&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;sequence_number&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#B5CEA8">13</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;item_id&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;msg_0f7983f1618f89d20068efe9b45d748191a5239d49c2971a65&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;output_index&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#B5CEA8">3</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;content_index&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#B5CEA8">0</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;delta&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;Here&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">...</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;response.output_text.done&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;sequence_number&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#B5CEA8">25</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;item_id&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;msg_0f7983f1618f89d20068efe9b45d748191a5239d49c2971a65&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;output_index&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#B5CEA8">3</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;content_index&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#B5CEA8">0</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;text&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;Here</span><span style="--0:#D7BA7D">\u2019</span><span style="--0:#CE9178">s the current weather for San Francisco, CA (as of Wednesday, October 15, 2025):</span><span style="--0:#D7BA7D">\n\n</span><span style="--0:#CE9178">- Current conditions: Cloudy, 58</span><span style="--0:#D7BA7D">\u00b0</span><span style="--0:#CE9178">F (14</span><span style="--0:#D7BA7D">\u00b0</span><span style="--0:#CE9178">C).</span><span style="--0:#D7BA7D">\n</span><span style="--0:#CE9178">- Today</span><span style="--0:#D7BA7D">\u2019</span><span style="--0:#CE9178">s outlook: A shower in spots late this morning; oth</span></div></div><div class="ec-line"><div class="code"><span style="--0:#CE9178">erwise a cloudy start with sunshine returning later. High near 67</span><span style="--0:#D7BA7D">\u00b0</span><span style="--0:#CE9178">F (19</span><span style="--0:#D7BA7D">\u00b0</span><span style="--0:#CE9178">C), low around 51</span><span style="--0:#D7BA7D">\u00b0</span><span style="--0:#CE9178">F (11</span><span style="--0:#D7BA7D">\u00b0</span><span style="--0:#CE9178">C).</span><span style="--0:#D7BA7D">\n\n</span><span style="--0:#CE9178">If you</span><span style="--0:#D7BA7D">\u2019</span><span style="--0:#CE9178">d like wind speed, humidity, or hourly updates, I can pull those too. &quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;response.content_part.done&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;sequence_number&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#B5CEA8">26</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;item_id&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;msg_0f7983f1618f89d20068efe9b45d748191a5239d49c2971a65&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;output_index&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#B5CEA8">3</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;content_index&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#B5CEA8">0</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;part&quot;</span><span style="--0:#D4D4D4">: {</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;output_text&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;annotations&quot;</span><span style="--0:#D4D4D4">: [],</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;text&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;Here</span><span style="--0:#D7BA7D">\u2019</span><span style="--0:#CE9178">s the current weather for San Francisco, CA (as of Wednesday, October 15, 2025):</span><span style="--0:#D7BA7D">\n\n</span><span style="--0:#CE9178">- Current conditions: Cloudy, 58</span><span style="--0:#D7BA7D">\u00b0</span><span style="--0:#CE9178">F (14</span><span style="--0:#D7BA7D">\u00b0</span><span style="--0:#CE9178">C).</span><span style="--0:#D7BA7D">\n</span><span style="--0:#CE9178">- Today</span><span style="--0:#D7BA7D">\u2019</span><span style="--0:#CE9178">s outlook: A shower in spots late this morning; o</span></div></div><div class="ec-line"><div class="code"><span style="--0:#CE9178">therwise a cloudy start with sunshine returning later. High near 67</span><span style="--0:#D7BA7D">\u00b0</span><span style="--0:#CE9178">F (19</span><span style="--0:#D7BA7D">\u00b0</span><span style="--0:#CE9178">C), low around 51</span><span style="--0:#D7BA7D">\u00b0</span><span style="--0:#CE9178">F (11</span><span style="--0:#D7BA7D">\u00b0</span><span style="--0:#CE9178">C).</span><span style="--0:#D7BA7D">\n\n</span><span style="--0:#CE9178">If you</span><span style="--0:#D7BA7D">\u2019</span><span style="--0:#CE9178">d like wind speed, humidity, or hourly updates, I can pull those too. &quot;</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">  </span></span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="{  &#34;type&#34;: &#34;response.content_part.added&#34;,  &#34;sequence_number&#34;: 12,  &#34;item_id&#34;: &#34;msg_0f7983f1618f89d20068efe9b45d748191a5239d49c2971a65&#34;,  &#34;output_index&#34;: 3,  &#34;content_index&#34;: 0,  &#34;part&#34;: {    &#34;type&#34;: &#34;output_text&#34;,    &#34;annotations&#34;: [],    &#34;text&#34;: &#34;&#34;  }}{  &#34;type&#34;: &#34;response.output_text.delta&#34;,  &#34;sequence_number&#34;: 13,  &#34;item_id&#34;: &#34;msg_0f7983f1618f89d20068efe9b45d748191a5239d49c2971a65&#34;,  &#34;output_index&#34;: 3,  &#34;content_index&#34;: 0,  &#34;delta&#34;: &#34;Here&#34;,}...{  &#34;type&#34;: &#34;response.output_text.done&#34;,  &#34;sequence_number&#34;: 25,  &#34;item_id&#34;: &#34;msg_0f7983f1618f89d20068efe9b45d748191a5239d49c2971a65&#34;,  &#34;output_index&#34;: 3,  &#34;content_index&#34;: 0,  &#34;text&#34;: &#34;Here\u2019s the current weather for San Francisco, CA (as of Wednesday, October 15, 2025):\n\n- Current conditions: Cloudy, 58\u00b0F (14\u00b0C).\n- Today\u2019s outlook: A shower in spots late this morning; otherwise a cloudy start with sunshine returning later. High near 67\u00b0F (19\u00b0C), low around 51\u00b0F (11\u00b0C).\n\nIf you\u2019d like wind speed, humidity, or hourly updates, I can pull those too. &#34;,}{  &#34;type&#34;: &#34;response.content_part.done&#34;,  &#34;sequence_number&#34;: 26,  &#34;item_id&#34;: &#34;msg_0f7983f1618f89d20068efe9b45d748191a5239d49c2971a65&#34;,  &#34;output_index&#34;: 3,  &#34;content_index&#34;: 0,  &#34;part&#34;: {    &#34;type&#34;: &#34;output_text&#34;,    &#34;annotations&#34;: [],    &#34;text&#34;: &#34;Here\u2019s the current weather for San Francisco, CA (as of Wednesday, October 15, 2025):\n\n- Current conditions: Cloudy, 58\u00b0F (14\u00b0C).\n- Today\u2019s outlook: A shower in spots late this morning; otherwise a cloudy start with sunshine returning later. High near 67\u00b0F (19\u00b0C), low around 51\u00b0F (11\u00b0C).\n\nIf you\u2019d like wind speed, humidity, or hourly updates, I can pull those too. &#34;  }}"><div></div></button></div></figure></div></details>
+<ol start="3">
+<li>Items with <code>content</code> MAY emit multiple content parts, following the pattern above. When finished, the item is closed with <code>response.output_item.done</code></li>
+</ol>
+<details><summary><strong>Example</strong></summary><div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="json"><code><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;response.output_item.done&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;sequence_number&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#B5CEA8">27</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;output_index&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#B5CEA8">3</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;item&quot;</span><span style="--0:#D4D4D4">: {</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;id&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;msg_0f7983f1618f89d20068efe9b45d748191a5239d49c2971a65&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;message&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;status&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;completed&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;content&quot;</span><span style="--0:#D4D4D4">: [</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">      </span></span><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">        </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;output_text&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">        </span><span style="--0:#9CDCFE">&quot;annotations&quot;</span><span style="--0:#D4D4D4">: [],</span></div></div><div class="ec-line"><div class="code"><span class="indent">        </span><span style="--0:#9CDCFE">&quot;text&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;Here</span><span style="--0:#D7BA7D">\u2019</span><span style="--0:#CE9178">s the current weather for San Francisco, CA (as of Wednesday, October 15, 2025):</span><span style="--0:#D7BA7D">\n\n</span><span style="--0:#CE9178">- Current conditions: Cloudy, 58</span><span style="--0:#D7BA7D">\u00b0</span><span style="--0:#CE9178">F (14</span><span style="--0:#D7BA7D">\u00b0</span><span style="--0:#CE9178">C).</span><span style="--0:#D7BA7D">\n</span><span style="--0:#CE9178">- Today</span><span style="--0:#D7BA7D">\u2019</span><span style="--0:#CE9178">s outlook: A shower in spots late this mornin</span></div></div><div class="ec-line"><div class="code"><span style="--0:#CE9178">g; otherwise a cloudy start with sunshine returning later. High near 67</span><span style="--0:#D7BA7D">\u00b0</span><span style="--0:#CE9178">F (19</span><span style="--0:#D7BA7D">\u00b0</span><span style="--0:#CE9178">C), low around 51</span><span style="--0:#D7BA7D">\u00b0</span><span style="--0:#CE9178">F (11</span><span style="--0:#D7BA7D">\u00b0</span><span style="--0:#CE9178">C).</span><span style="--0:#D7BA7D">\n\n</span><span style="--0:#CE9178">If you</span><span style="--0:#D7BA7D">\u2019</span><span style="--0:#CE9178">d like wind speed, humidity, or hourly updates, I can pull those too. &quot;</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">      </span></span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">],</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;role&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;assistant&quot;</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">  </span></span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="{  &#34;type&#34;: &#34;response.output_item.done&#34;,  &#34;sequence_number&#34;: 27,  &#34;output_index&#34;: 3,  &#34;item&#34;: {    &#34;id&#34;: &#34;msg_0f7983f1618f89d20068efe9b45d748191a5239d49c2971a65&#34;,    &#34;type&#34;: &#34;message&#34;,    &#34;status&#34;: &#34;completed&#34;,    &#34;content&#34;: [      {        &#34;type&#34;: &#34;output_text&#34;,        &#34;annotations&#34;: [],        &#34;text&#34;: &#34;Here\u2019s the current weather for San Francisco, CA (as of Wednesday, October 15, 2025):\n\n- Current conditions: Cloudy, 58\u00b0F (14\u00b0C).\n- Today\u2019s outlook: A shower in spots late this morning; otherwise a cloudy start with sunshine returning later. High near 67\u00b0F (19\u00b0C), low around 51\u00b0F (11\u00b0C).\n\nIf you\u2019d like wind speed, humidity, or hourly updates, I can pull those too. &#34;      }    ],    &#34;role&#34;: &#34;assistant&#34;  }}"><div></div></button></div></figure></div></details>
+<h3 id="items-are-extensible">Items are extensible</h3>
+<p>Model providers may emit their own types of items not contained in the Open Responses spec. These items MUST be prefixed with the canonical provider slug, eg</p>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="json"><code><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;id&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;ws_0df093a2d268cd7f0068efe79ac9408190b9833ec01e5d05ed&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;openai:web_search_call&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;status&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;completed&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;action&quot;</span><span style="--0:#D4D4D4">: {</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;search&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;query&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;weather: San Francisco, CA&quot;</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">  </span></span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="{  &#34;id&#34;: &#34;ws_0df093a2d268cd7f0068efe79ac9408190b9833ec01e5d05ed&#34;,  &#34;type&#34;: &#34;openai:web_search_call&#34;,  &#34;status&#34;: &#34;completed&#34;,  &#34;action&#34;: {    &#34;type&#34;: &#34;search&#34;,    &#34;query&#34;: &#34;weather: San Francisco, CA&#34;  }}"><div></div></button></div></figure></div>
+<h2 id="content">Content</h2>
+<p>In Open Responses, “content” represents the raw material exchanged between the user and the model within each message turn. It is deliberately modeled as a discriminated union rather than a single polymorphic type, allowing different shapes for user-authored input and model-generated output.</p>
+<h3 id="user-content-vs-model-content">User Content vs Model Content</h3>
+<p>There are two top-level content unions:</p>
+<ul>
+<li><strong><code>UserContent</code></strong>: structured data provided by the user or client application.</li>
+<li><strong><code>ModelContent</code></strong>: structured data returned by the model.</li>
+</ul>
+<p>This distinction reflects the asymmetric nature of conversation turns. User inputs can include multiple modalities (e.g. text, images, audio, video), while model outputs are usually restricted to text, at least in the base protocol. Keeping these unions separate allows model providers to evolve their output schemas independently (for example, adding <code>output_image</code> or <code>output_tool_call</code> in the future) without over-generalizing the user side.</p>
+<h3 id="why-user-and-assistant-content-have-different-shapes">Why User and Assistant Content Have Different Shapes</h3>
+<p>Although both are called “content,” user and assistant payloads serve very different roles:</p>
+<ul>
+<li><strong>User content</strong> captures <em>what the model is being asked to process.</em> It can include one or more text segments, images, or other binary data that are meaningful inputs to the model’s inference step.</li>
+<li><strong>Assistant (model) content</strong> captures <em>what the model produced</em>—its textual completion or reasoning output. These are usually serializable as UTF-8 text, optionally with metadata like token logprobs.</li>
+</ul>
+<p>Because of this asymmetry:</p>
+<ul>
+<li>User content must support multiple data types (text, base64-encoded or URL-sourced images, potentially other future modalities).</li>
+<li>Model content is intentionally narrower to keep the protocol minimal and predictable across providers.</li>
+</ul>
+<p>This separation simplifies validation, streaming, and logging. For example, a client can safely assume every model message contains <code>output_text</code>, while user messages may contain arbitrary mixtures of text and image inputs.</p>
+<h2 id="reasoning">Reasoning</h2>
+<p>Reasoning items expose the model’s internal thought process in a controlled, provider-defined way. A reasoning item’s payload can include some or all of the following fields:</p>
+<ul>
+<li><strong><code>content</code> (raw reasoning content):</strong> Providers MAY surface the model’s raw reasoning trace directly through the <code>content</code> field on <code>reasoning</code> items. This content is typically streamable and follows the same delta semantics as other text-like content parts. Exposing raw reasoning is optional and may be disabled or truncated for safety, privacy, or cost reasons.</li>
+<li><strong><code>encrypted_content</code> (protected reasoning content):</strong> Providers MAY choose to never expose raw reasoning to the client. Instead, they can return an <code>encrypted_content</code> payload whose format and cryptographic properties are provider-specific. Clients are expected to treat this field as opaque and non-inspectable; it is intended for providers to protect reasoning content while allowing it to be round-trippable.</li>
+<li><strong><code>summary</code> (reasoning summaries):</strong> Providers MAY implement a summarized view of the reasoning trace (for example, a short natural-language explanation of the key steps the model took) and expose it via the <code>summary</code> field. Summaries are designed to be safe to show to end users and can be used for transparency, debugging, or UI affordances without revealing the full raw trace.</li>
+</ul>
+<p>All three fields are optional (can be null or the zero-value), and providers are free to support any combination of them, depending on their safety policies, business requirements, and implementation details.</p>
+<details><summary><strong>Example</strong></summary><div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="json"><code><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;reasoning&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;status&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;completed&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;summary&quot;</span><span style="--0:#D4D4D4">: [</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;summary_text&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;text&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;Determined that the user is asking for restaurant recommendations in a specific city, then filtered options by distance and rating before selecting three suggestions.&quot;</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">  </span></span><span style="--0:#D4D4D4">],</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;content&quot;</span><span style="--0:#D4D4D4">: [</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;output_text&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;text&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;User asked: </span><span style="--0:#D7BA7D">\&quot;</span><span style="--0:#CE9178">Where should I eat dinner in downtown Seattle tonight?</span><span style="--0:#D7BA7D">\&quot;</span><span style="--0:#CE9178">↵↵1. Interpreted task as a search for nearby restaurants suitable for dinner.↵2. Prioritized places within a short walking radius of downtown.↵3. Filtered candidates by overall rating and number of reviews.↵4. Preferred options with vegetarian choices and moderate price range.↵5. Selected three restaurants that best match the inferred preferences.&quot;</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">  </span></span><span style="--0:#D4D4D4">],</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;encrypted_content&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#569CD6">null</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="{  &#34;type&#34;: &#34;reasoning&#34;,  &#34;status&#34;: &#34;completed&#34;,  &#34;summary&#34;: [    {      &#34;type&#34;: &#34;summary_text&#34;,      &#34;text&#34;: &#34;Determined that the user is asking for restaurant recommendations in a specific city, then filtered options by distance and rating before selecting three suggestions.&#34;    }  ],  &#34;content&#34;: [    {      &#34;type&#34;: &#34;output_text&#34;,      &#34;text&#34;: &#34;User asked: \&#34;Where should I eat dinner in downtown Seattle tonight?\&#34;↵↵1. Interpreted task as a search for nearby restaurants suitable for dinner.↵2. Prioritized places within a short walking radius of downtown.↵3. Filtered candidates by overall rating and number of reviews.↵4. Preferred options with vegetarian choices and moderate price range.↵5. Selected three restaurants that best match the inferred preferences.&#34;    }  ],  &#34;encrypted_content&#34;: null}"><div></div></button></div></figure></div></details>
+<h2 id="errors">Errors</h2>
+<p>Error handling in Open Responses is designed to provide clear, actionable feedback to developers and users when requests fail or encounter issues.</p>
+<p>When an error occurs, the API responds with a structured error object that includes:</p>
+<ul>
+<li><strong>Type</strong>: The category of the error, such as <code>server_error</code>, <code>model_error</code>, <code>invalid_request</code>, or <code>not_found</code>. These generally, but not always, map to the status code of the response.</li>
+<li><strong>Code</strong>: An optional error code providing additional detail about the specific problem. All common error codes are enumerated in the spec.</li>
+<li><strong>Param</strong>: The input parameter related to the error, if applicable.</li>
+<li><strong>Message</strong>: A human-readable explanation of what went wrong.</li>
+</ul>
+<p>Errors are also emitted as events in the streaming protocol, allowing clients to detect and respond to issues in real time while processing streamed responses. Any error incurred while streaming will be followed by a <code>response.failed</code> event.</p>
+<p>It is recommended to check for error responses and handle them gracefully in your client implementation. Display user-friendly messages or trigger appropriate fallbacks where possible.</p>
+<p>Error types can indicate whether an error is recoverable or not, allowing your application to determine if it should retry, prompt the user, or halt the operation. The error’s <code>code</code> provide additional details, often including guidance or steps for recovery, which helps developers create more robust and responsive clients.</p>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="json"><code><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;error&quot;</span><span style="--0:#D4D4D4">: {</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;message&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;The requested model &#39;fake-model&#39; does not exist.&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;invalid_request_error&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;param&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;model&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;code&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;model_not_found&quot;</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">  </span></span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="{  &#34;error&#34;: {    &#34;message&#34;: &#34;The requested model 'fake-model' does not exist.&#34;,    &#34;type&#34;: &#34;invalid_request_error&#34;,    &#34;param&#34;: &#34;model&#34;,    &#34;code&#34;: &#34;model_not_found&#34;  }}"><div></div></button></div></figure></div>
+<h3 id="error-types">Error Types</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Error Type</th><th>Description</th><th>Status Code</th></tr></thead><tbody><tr><td><code>server_error</code></td><td>The server encountered an unexpected condition and could not complete the request. This is an internal failure and is not caused by the client. Retrying later may succeed.</td><td>500</td></tr><tr><td><code>invalid_request</code></td><td>The request is malformed or semantically invalid. One or more parameters are missing, incorrectly formatted, or unsupported. This error is user-resolvable by fixing the request.</td><td>400</td></tr><tr><td><code>not_found</code></td><td>The requested resource does not exist or is not accessible at the specified path or identifier. The client should verify the endpoint or resource ID.</td><td>404</td></tr><tr><td><code>model_error</code></td><td>The model failed while processing an otherwise valid request. This indicates an internal model or execution error and is not user-resolvable.</td><td>500</td></tr><tr><td><code>too_many_requests</code></td><td>The client has exceeded the allowed request rate. Requests are being temporarily throttled. The client should slow down and retry after a delay.</td><td>429</td></tr></tbody></table>
+<h2 id="streaming">Streaming</h2>
+<p>Open Responses defines two major types of streaming events into which all events MUST fall.</p>
+<p><strong>Delta Events</strong></p>
+<p>A delta event represents a change to an object since its last update. This mechanism allows updates to be communicated incrementally as they happen, making streamed responses possible and efficient.</p>
+<p>Common examples of delta events include:</p>
+<ul>
+<li>Adding a new item to a list (<code>response.output_item.added</code>)—for example, when a new message is generated and appended to a conversation.</li>
+<li>Appending more text to an ongoing output (<code>response.output_text.delta</code> or <code>response.function_call_arguments.delta</code>)—such as when a language model is generating a reply word by word.</li>
+<li>Signaling that no further changes will occur to a content part (<code>response.content_part.done</code>)—for example, when the model has finished generating a sentence or paragraph.</li>
+</ul>
+<p>All streamable objects must follow this delta event pattern. For instance, the flow of delta events on an output item could start with the item being added, followed by several text deltas as content is generated, and ending with a “done” event to indicate completion.</p>
+<div data-lightbox="true" data-scrollable="true"><p><img src="/streaming/simple-streaming.svg" alt="simple-streaming.svg"/></p></div>
+<p><strong>State Machine events</strong></p>
+<p>A state machine event represents a change in the <em>status</em> of an object as it progresses through its lifecycle. For example, when a response changes status from <code>in_progress</code> to <code>completed</code>, a <code>response.completed</code> event is triggered.</p>
+<p>Other examples include:</p>
+<ul>
+<li>When a <code>Response</code> moves from <code>queued</code> to <code>in_progress</code>, a <code>response.in_progress</code> event is emitted.</li>
+<li>If an Response encounters an error and its status changes to <code>failed</code>, a <code>response.failed</code> event is generated.</li>
+</ul>
+<h2 id="tools">Tools</h2>
+<p>Tool-use is at the heart of modern LLM’s agentic capabilities. There are generally two types of tools that can be exposed in Open Responses:</p>
+<h3 id="externally-hosted-tools">Externally-hosted tools</h3>
+<p>Externally hosted tools are ones where the implementation lives outside of the model provider’s system. Functions are a great example, where the LLM is able to call the function, but the developer must run the function and return the output back to the LLM in a second request. MCP is another example, where external servers host the implementations, although control is not first yielded back to the developer.</p>
+<h3 id="internally-hosted-tools">Internally-hosted tools</h3>
+<p>Internally hosted tools are ones where the implementation lives inside the model provider’s system. An example is OpenAI’s file search tool, where the model is able to call file search, and the tool can execute and return results to the LLM without yielding control back to the developer.</p>
+<h2 id="previous_response_id"><code>previous_response_id</code></h2>
+<p>The <code>previous_response_id</code> field allows a client to resume or extend an existing response without having to resend its entire transcript.</p>
+<p>When <code>previous_response_id</code> is provided, the server MUST load both the input and output associated with that prior response and treat them as part of the new request’s context.</p>
+<p>Conceptually, the model is sampled over the concatenation:</p>
+<p><code>previous_response.input</code> + <code>previous_response.output</code> + <code>input</code></p>
+<p>where:</p>
+<ul>
+<li><code>previous_response.input</code> is the full, structured input that was sent with the referenced response (including any messages, tools, and configuration relevant to the model’s reasoning).</li>
+<li><code>previous_response.output</code> is the model-produced content from that response (e.g., messages, tool calls, and other output items).</li>
+<li><code>input</code> is the new request payload supplied alongside <code>previous_response_id</code>, which is logically appended after the prior input + output.</li>
+</ul>
+<p>The server is responsible for translating this logical concatenation into whatever internal representation it uses (e.g., messages, events, or tokens). Providers MAY apply truncation or compaction as needed (subject to their truncation policies) but MUST preserve the semantic order of:</p>
+<p><code>previous_response.input</code> → <code>previous_response.output</code> → <code>input</code></p>
+<p>From the client’s perspective, using <code>previous_response_id</code> is equivalent to asking the model to “continue the conversation” from the point where the prior response ended, with additional instructions or messages layered on top.</p>
+<h2 id="tool_choice"><code>tool_choice</code></h2>
+<p>The <code>tool_choice</code> field controls whether, and how, the model is allowed to invoke tools during a response. It applies to all tools exposed in the request (functions, hosted tools, etc.) and lets the client shape the model’s behavior from “never call tools” to “must call this specific tool.”</p>
+<ul>
+<li><code>&quot;auto&quot;</code> (default): The model may either call a tool or respond directly, based on its judgment of what best satisfies the request. This is the most flexible mode and is recommended for most general-purpose use cases.</li>
+<li><code>&quot;required&quot;</code>: The model MUST call at least one tool and should not respond directly without doing so. Use this when a tool call is the only valid way to fulfill the request (for example, “look up” or “execute” style actions that always require external data or side effects).</li>
+<li><code>&quot;none&quot;</code>: The model MUST NOT call any tools. It must rely solely on its internal knowledge and reasoning. This is useful for “model-only” completions, evaluations, or when tool side effects are undesirable.</li>
+</ul>
+<p>In addition to these simple modes, <code>tool_choice</code> also accepts a structured object to force a particular tool to be used:</p>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="json"><code><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;tool_choice&quot;</span><span style="--0:#D4D4D4">: {</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;function&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;name&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;fn_name&quot;</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">  </span></span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="{  &#34;tool_choice&#34;: {    &#34;type&#34;: &#34;function&#34;,    &#34;name&#34;: &#34;fn_name&#34;  }}"><div></div></button></div></figure></div>
+<p>In this form, the model is required to call the specified function tool <code>fn_name</code>. This is useful when the client has already decided which tool is appropriate (for example, after a UI selection or routing decision) and wants to bypass the model’s tool-selection step while still letting the model construct arguments and interpret results.</p>
+<h3 id="allowed_tools"><code>allowed_tools</code></h3>
+<p>The <code>allowed_tools</code> field lets a client limit which tools the model is permitted to actually invoke, without changing the <code>tools</code> list itself. All tools are still surfaced to the model in context (preserving cacheability of the shared system prompt and tool schema), but the model MUST restrict its tool calls to the subset named in <code>allowed_tools</code>.</p>
+<p>This is primarily a cache-preserving control surface: instead of mutating the <code>tools</code> field (which typically invalidates any prompt or schema caches), a client can use <code>allowed_tools</code> to dynamically narrow or expand the effective tool menu for a given request while reusing the same underlying tool definitions.</p>
+<p>Servers MUST enforce <code>allowed_tools</code> as a hard constraint:</p>
+<ul>
+<li>If <code>allowed_tools</code> is present, any tool call to a tool not listed MUST be rejected or suppressed by the server (e.g., by treating it as a model error, translating it into a direct reply, or applying provider-specific fallback behavior).</li>
+<li>Providers MAY also use <code>allowed_tools</code> as a training or routing hint, but this MUST NOT weaken the enforcement guarantee.</li>
+</ul>
+<p>Conceptually, <code>tools</code> defines the full tool universe visible to the model, while <code>allowed_tools</code> defines the subset that is executable for this request. This separation enables fine-grained, per-request tool governance—such as tenant-level policies, user roles, or feature flags—without requiring the client to rebuild or re-send large tool schemas or system prompts.</p>
+<details><summary><strong>Example:</strong></summary><div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="json"><code><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;model&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;gpt-openresponses-1&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;input&quot;</span><span style="--0:#D4D4D4">: [</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;role&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;user&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;content&quot;</span><span style="--0:#D4D4D4">: [</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">        </span></span><span style="--0:#D4D4D4">{</span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;input_text&quot;</span><span style="--0:#D4D4D4">, </span><span style="--0:#9CDCFE">&quot;text&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;Summarize the latest sales data and then draft a follow-up email.&quot;</span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">      </span></span><span style="--0:#D4D4D4">]</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">  </span></span><span style="--0:#D4D4D4">],</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;tools&quot;</span><span style="--0:#D4D4D4">: [</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;function&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;name&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;get_latest_sales_report&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;description&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;Fetches the most recent sales report for the current quarter.&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;parameters&quot;</span><span style="--0:#D4D4D4">: {</span></div></div><div class="ec-line"><div class="code"><span class="indent">        </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;object&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">        </span><span style="--0:#9CDCFE">&quot;properties&quot;</span><span style="--0:#D4D4D4">: {</span></div></div><div class="ec-line"><div class="code"><span class="indent">          </span><span style="--0:#9CDCFE">&quot;region&quot;</span><span style="--0:#D4D4D4">: {</span></div></div><div class="ec-line"><div class="code"><span class="indent">            </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;string&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">            </span><span style="--0:#9CDCFE">&quot;description&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;Geographic sales region identifier.&quot;</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">          </span></span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">        </span></span><span style="--0:#D4D4D4">},</span></div></div><div class="ec-line"><div class="code"><span class="indent">        </span><span style="--0:#9CDCFE">&quot;required&quot;</span><span style="--0:#D4D4D4">: [</span><span style="--0:#CE9178">&quot;region&quot;</span><span style="--0:#D4D4D4">]</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">      </span></span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">},</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;function&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;name&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;send_email&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;description&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;Sends an email via the CRM.&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;parameters&quot;</span><span style="--0:#D4D4D4">: {</span></div></div><div class="ec-line"><div class="code"><span class="indent">        </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;object&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">        </span><span style="--0:#9CDCFE">&quot;properties&quot;</span><span style="--0:#D4D4D4">: {</span></div></div><div class="ec-line"><div class="code"><span class="indent">          </span><span style="--0:#9CDCFE">&quot;to&quot;</span><span style="--0:#D4D4D4">: { </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;string&quot;</span><span style="--0:#D4D4D4"> },</span></div></div><div class="ec-line"><div class="code"><span class="indent">          </span><span style="--0:#9CDCFE">&quot;subject&quot;</span><span style="--0:#D4D4D4">: { </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;string&quot;</span><span style="--0:#D4D4D4"> },</span></div></div><div class="ec-line"><div class="code"><span class="indent">          </span><span style="--0:#9CDCFE">&quot;body&quot;</span><span style="--0:#D4D4D4">: { </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;string&quot;</span><span style="--0:#D4D4D4"> }</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">        </span></span><span style="--0:#D4D4D4">},</span></div></div><div class="ec-line"><div class="code"><span class="indent">        </span><span style="--0:#9CDCFE">&quot;required&quot;</span><span style="--0:#D4D4D4">: [</span><span style="--0:#CE9178">&quot;to&quot;</span><span style="--0:#D4D4D4">, </span><span style="--0:#CE9178">&quot;subject&quot;</span><span style="--0:#D4D4D4">, </span><span style="--0:#CE9178">&quot;body&quot;</span><span style="--0:#D4D4D4">]</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">      </span></span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">  </span></span><span style="--0:#D4D4D4">],</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;tool_choice&quot;</span><span style="--0:#D4D4D4">: {</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;allowed_tools&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#9CDCFE">&quot;tools&quot;</span><span style="--0:#D4D4D4">: [</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">      </span></span><span style="--0:#D4D4D4">{ </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;function&quot;</span><span style="--0:#D4D4D4">, </span><span style="--0:#9CDCFE">&quot;name&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;get_latest_sales_report&quot;</span><span style="--0:#D4D4D4"> }</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">]</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">  </span></span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="{  &#34;model&#34;: &#34;gpt-openresponses-1&#34;,  &#34;input&#34;: [    {      &#34;role&#34;: &#34;user&#34;,      &#34;content&#34;: [        {&#34;type&#34;: &#34;input_text&#34;, &#34;text&#34;: &#34;Summarize the latest sales data and then draft a follow-up email.&#34;}      ]    }  ],  &#34;tools&#34;: [    {      &#34;type&#34;: &#34;function&#34;,      &#34;name&#34;: &#34;get_latest_sales_report&#34;,      &#34;description&#34;: &#34;Fetches the most recent sales report for the current quarter.&#34;,      &#34;parameters&#34;: {        &#34;type&#34;: &#34;object&#34;,        &#34;properties&#34;: {          &#34;region&#34;: {            &#34;type&#34;: &#34;string&#34;,            &#34;description&#34;: &#34;Geographic sales region identifier.&#34;          }        },        &#34;required&#34;: [&#34;region&#34;]      }    },    {      &#34;type&#34;: &#34;function&#34;,      &#34;name&#34;: &#34;send_email&#34;,      &#34;description&#34;: &#34;Sends an email via the CRM.&#34;,      &#34;parameters&#34;: {        &#34;type&#34;: &#34;object&#34;,        &#34;properties&#34;: {          &#34;to&#34;: { &#34;type&#34;: &#34;string&#34; },          &#34;subject&#34;: { &#34;type&#34;: &#34;string&#34; },          &#34;body&#34;: { &#34;type&#34;: &#34;string&#34; }        },        &#34;required&#34;: [&#34;to&#34;, &#34;subject&#34;, &#34;body&#34;]      }    }  ],  &#34;tool_choice&#34;: {    &#34;type&#34;: &#34;allowed_tools&#34;,    &#34;tools&#34;: [      { &#34;type&#34;: &#34;function&#34;, &#34;name&#34;: &#34;get_latest_sales_report&#34; }    ]  }}"><div></div></button></div></figure></div><caption>In this request, the model is free to decide whether to call tools at all (<code>tool_choice: &quot;auto&quot;</code>), but if it does, it can only invoke <code>get_latest_sales_report</code>, even though <code>send_email</code> is visible in the shared <code>tools</code> list.</caption></details>
+<h2 id="truncation"><code>truncation</code></h2>
+<p>The <code>truncation</code> parameter controls whether the server is allowed to shorten the effective context when the total input (including any <code>previous_response</code> content) would exceed the model’s context window.</p>
+<ul>
+<li><code>&quot;auto&quot;</code>: The server MAY truncate earlier parts of the context (for example, older messages or low-priority sections) in order to fit within the model’s context window. Providers SHOULD apply sensible heuristics when doing so (e.g., preserving system messages and recent turns) and MAY expose provider-specific policies for how truncation is performed.</li>
+<li><code>&quot;disabled&quot;</code>: The server MUST NOT truncate any input. If the combined context exceeds the model’s maximum context window, the request MUST fail with an error instead of silently dropping content. This mode is appropriate when the client prefers a hard failure over any loss of context.</li>
+</ul>
+<p>Clients that require predictable behavior under large-context workloads can use <code>truncation</code> to choose between graceful degradation (<code>auto</code>) and strict correctness guarantees (<code>disabled</code>).</p>
+<h2 id="service_tier"><code>service_tier</code></h2>
+<p>The <code>service_tier</code> field is a hint to the provider about how urgently and reliably a given request should be processed. Conceptually, it expresses “priority processing” for a response: higher tiers should receive faster scheduling, more generous resource allocation, or stricter latency targets than lower tiers.</p>
+<p>Servers MAY expose multiple tiers (for example, <code>standard</code>, <code>priority</code>, or <code>batch</code>) and map them to different internal queues, SLAs, or pricing. Implementations SHOULD document which tiers they support, what behavior each tier implies (e.g., typical latency, throughput, or reliability characteristics), and any constraints or quotas tied to those tiers.</p>
+<h1 id="implementing-open-responses">Implementing Open Responses</h1>
+<p>In this example, the client requests the <code>custom_document_search</code> hosted tool exposed by the implementer. The implementer executes the tool directly, returning results to the client and abstracting away the internal workings.</p>
+<h2 id="the-agentic-loop">The Agentic loop</h2>
+<p>The agentic loop is the core principle that enables Open Responses to interact intelligently with users, reason about tasks, and invoke tools as needed to complete complex workflows. In this loop, the language model analyzes the user’s request, determines whether it can answer directly or needs to use a tool, and issues tool calls as required.</p>
+<p>When a tool needs to be used, the model emits a tool invocation event, such as a function call or a hosted tool call, containing the necessary parameters. For externally-hosted tools, the execution happens outside the model provider, and the result is returned in a follow-up request. For internally-hosted tools, the model provider executes the tool and immediately streams back the results.</p>
+<p>This loop of reasoning, tool invocation, and response generation can repeat multiple times within a session, allowing the model to gather information, process data, or take actions through tools before producing a final answer for the user.</p>
+<div class="diagram-scroll" data-lightbox data-scrollable> <pre class="mermaid">sequenceDiagram
+autonumber
+participant User
+participant API as API Server
+participant LLM
+participant Tool
+
+User-&gt;&gt;API: user request
+
+loop agentic loop
+API-&gt;&gt;LLM: sample from model
+LLM--&gt;&gt;API: Sampled message
+alt tool called by model
+API-&gt;&gt;Tool: sampled tool call arguments
+Tool--&gt;&gt;API: tool result
+else
+Note right of API: loop finished
+end
+end
+
+API--&gt;&gt;User: output items</pre> </div>
+<h2 id="extending-open-responses">Extending Open Responses</h2>
+<p>Any implementer can be considered to have a Open Responses-compliant API if they have an API that implements this spec directly or is a proper superset of Open Responses. The spec acknowledges that providers will want to build features that are not part of the spec. Features that gain broad adoption among frontier models should be considered for standardization by <a href="https://www.openresponses.org/governance#6-responsibilities-of-the-tsc">the TSC</a>.</p>
+<h3 id="extending-tools">Extending tools</h3>
+<p>Implementers can expose their own hosted tools—distinct from standard function tools—by providing new capabilities directly within their Open Responses implementation, such as custom search, retrieval, or workflow orchestration. When a user or model invokes a hosted tool, the implementor executes it within their own environment, often integrating with services or logic outside the model provider, and returns the result without exposing the implementation details. This enables implementors to add custom features while maintaining a consistent tool interface for both users and models.</p>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="json"><code><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;model&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;my-model&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;messages&quot;</span><span style="--0:#D4D4D4">: [</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">{</span><span style="--0:#9CDCFE">&quot;role&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;user&quot;</span><span style="--0:#D4D4D4">, </span><span style="--0:#9CDCFE">&quot;content&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;Find relevant documents about climate change.&quot;</span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">  </span></span><span style="--0:#D4D4D4">],</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;tools&quot;</span><span style="--0:#D4D4D4">: [</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;implementor_slug:custom_document_search&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;documents&quot;</span><span style="--0:#D4D4D4">: [</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">        </span></span><span style="--0:#D4D4D4">{ </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;external_file&quot;</span><span style="--0:#D4D4D4">, </span><span style="--0:#9CDCFE">&quot;url&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;https://arxiv.org/example.pdf&quot;</span><span style="--0:#D4D4D4"> }</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">      </span></span><span style="--0:#D4D4D4">]</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">  </span></span><span style="--0:#D4D4D4">]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="{  &#34;model&#34;: &#34;my-model&#34;,  &#34;messages&#34;: [    {&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: &#34;Find relevant documents about climate change.&#34;}  ],  &#34;tools&#34;: [    {      &#34;type&#34;: &#34;implementor_slug:custom_document_search&#34;,      &#34;documents&#34;: [        { &#34;type&#34;: &#34;external_file&#34;, &#34;url&#34;: &#34;https://arxiv.org/example.pdf&#34; }      ]    }  ]}"><div></div></button></div></figure></div>
+<p>In this example, the client requests the <code>implementor_slug:custom_document_search</code> hosted tool exposed by the implementer. The implementer executes the tool directly, returning results to the client and abstracting away the internal workings.</p>
+<p><strong>Hosted tools must have corresponding item types</strong></p>
+<p>When building custom tools, the tool should have its own item type that provides developers a receipt of what occurred during tool call execution. The item at minimum should contain a representation of how the model invoked the tool, the status of the tool call, and the result from the tool.</p>
+<p>In the above example, as output the API may emit the following item as output:</p>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="json"><code><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;implementor_slug:custom_document_search&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;id&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;cdc_759bd159770647a681a6ed186843fcca&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;query&quot;</span><span style="--0:#D4D4D4">: [</span><span style="--0:#CE9178">&quot;climate change&quot;</span><span style="--0:#D4D4D4">, </span><span style="--0:#CE9178">&quot;global warming&quot;</span><span style="--0:#D4D4D4">],</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;status&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;completed&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;results&quot;</span><span style="--0:#D4D4D4">: [</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;document_id&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;result_6064c25dad6b4218b62e675234946de7&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#9CDCFE">&quot;chunk&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;Climate change threatens Cambodia’s crops, floods cities, heats temperatures, strains resources...&quot;</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">    </span></span><span style="--0:#D4D4D4">}</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#F66464">...</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D4D4D4">  </span></span><span style="--0:#D4D4D4">]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="{  &#34;type&#34;: &#34;implementor_slug:custom_document_search&#34;,  &#34;id&#34;: &#34;cdc_759bd159770647a681a6ed186843fcca&#34;,  &#34;query&#34;: [&#34;climate change&#34;, &#34;global warming&#34;],  &#34;status&#34;: &#34;completed&#34;,  &#34;results&#34;: [    {      &#34;document_id&#34;: &#34;result_6064c25dad6b4218b62e675234946de7&#34;,      &#34;chunk&#34;: &#34;Climate change threatens Cambodia’s crops, floods cities, heats temperatures, strains resources...&#34;    }    ...  ]}"><div></div></button></div></figure></div>
+<p>The item’s schema should allow for enough information to pass to the developer that it can be round-tripped back to the API for lossless rehydration on a followup request.</p>
+<h3 id="extending-items">Extending Items</h3>
+<p>Implementors MAY extend the <code>Item</code> union with new, non-standard item types to represent implementation-specific behaviors or data. However, any such extended item type—and any trajectory that contains it—SHOULD be treated as specific to that implementation and not assumed to be portable or interoperable across other Open Responses servers.</p>
+<p>New item types that are not part of this specification MUST be prefixed with the implementor slug (for example, <code>acme:search_result</code>), as outlined above. This prefixing convention helps avoid type-name collisions between implementors and makes ownership and semantics of extended item types explicit in logs, traces, and trajectories.</p>
+<p>When emitting or consuming extended item types, implementors SHOULD document their schemas and expected behaviors, and clients SHOULD be prepared to encounter unknown item types (for example, by ignoring them gracefully or treating them as opaque records) when interacting with multiple implementations.</p>
+<p><strong>Required item fields</strong></p>
+<p>Every <code>Item</code> in an Open Responses trajectory MUST include the following top-level fields, regardless of its specific <code>type</code>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Field</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td>A unique, opaque identifier for this item within the trajectory or session. Servers MAY choose any stable identifier format, but it MUST be unique enough for clients to reference the item unambiguously (for example, via <code>ItemReference</code> objects or logs).</td></tr><tr><td><code>type</code></td><td>A string that identifies the concrete item schema. Standard item types are defined by this specification (for example, <code>input_text</code>, <code>output_text</code>, or <code>tool_call</code>), while extension types MUST be prefixed with an implementor slug (for example, <code>acme:search_result</code>).</td></tr><tr><td><code>status</code></td><td>A lifecycle indicator describing the current state of the item. Typical values include <code>&quot;in_progress&quot;</code>, <code>&quot;completed&quot;</code>, and <code>&quot;failed&quot;</code>. Implementors MAY define additional statuses, but they SHOULD document their semantics and treat unknown status values conservatively on the client side.</td></tr></tbody></table>
+<p>These required fields ensure that all items—standard and extension types—are addressable (<code>id</code>), interpretable (<code>type</code>), and debuggable (<code>status</code>) in logs, traces, and streaming responses.</p>
+<p><strong>Example</strong></p>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="json"><code><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;acme:telemetry_chunk&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;id&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;tc_123&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;status&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;completed&quot;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#CE9178">&quot;request_id&quot;</span><span style="--0:#F66464">:</span><span style="--0:#D4D4D4"> </span><span style="--0:#CE9178">&quot;req_123&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;sequence&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#B5CEA8">4</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;latency_ms&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#B5CEA8">72</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;cache_hit&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#569CD6">true</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;notes&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;Model responded from warm cache.&quot;</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="{  &#34;type&#34;: &#34;acme:telemetry_chunk&#34;,  &#34;id&#34;: &#34;tc_123&#34;,  &#34;status&#34;: &#34;completed&#34;  &#34;request_id&#34;: &#34;req_123&#34;,  &#34;sequence&#34;: 4,  &#34;latency_ms&#34;: 72,  &#34;cache_hit&#34;: true,  &#34;notes&#34;: &#34;Model responded from warm cache.&#34;}"><div></div></button></div></figure></div>
+<p>In this example, an implementor introduces a custom streaming event type, <code>acme:telemetry_chunk</code>, to surface latency and cache information during a response stream. Clients that understand this extension can use it for observability or UX decisions, while other clients can safely ignore it and still process the standard tokens and items in the stream.</p>
+<h3 id="extending-streaming-events">Extending streaming events</h3>
+<p>Implementors MAY introduce new, non-standard streaming event types to surface implementation-specific metadata or behaviors during a response stream. These events can be useful for observability, debugging, UI adaptation, or coordinating external workflows, but they MUST NOT change the normative semantics of the core Open Responses stream (for example, token order or item lifecycle).</p>
+<p>As with custom item types, all extended streaming events MUST be prefixed with the implementor slug (for example, <code>acme:trace_event</code>) to avoid collisions and to make ownership and semantics explicit. Clients that do not understand a given extended event type MUST be able to ignore it safely without losing the ability to reconstruct the canonical response.</p>
+<p><strong>Required fields for extended streaming events</strong></p>
+<p>Extended streaming events SHOULD follow a consistent structure to make them easy to consume across implementations. At minimum, each event MUST include:</p>
+<ul>
+<li><code>type</code>: A string identifier for the event schema. Non-standard types MUST be prefixed with the implementor slug (for example, <code>acme:trace_event</code>).</li>
+<li><code>sequence_number</code>: A monotonically increasing number (within the stream or session) that allows clients to order events and detect gaps.</li>
+</ul>
+<p>Implementors MAY add additional fields specific to their use case (for example, timing metrics, cache information, or tool-invocation traces), but SHOULD document these fields and their semantics so that clients can make informed use of them.</p>
+<p><strong>Example</strong></p>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="json"><code><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;type&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;acme:trace_event&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;sequence_number&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#B5CEA8">1</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;phase&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;tool_resolution&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;latency_ms&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#B5CEA8">34</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;related_item_id&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;tc_789&quot;</span><span style="--0:#D4D4D4">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#9CDCFE">&quot;details&quot;</span><span style="--0:#D4D4D4">: </span><span style="--0:#CE9178">&quot;Resolved tool endpoint from local cache.&quot;</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D4D4D4">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="{  &#34;type&#34;: &#34;acme:trace_event&#34;,  &#34;sequence_number&#34;: 1,  &#34;phase&#34;: &#34;tool_resolution&#34;,  &#34;latency_ms&#34;: 34,  &#34;related_item_id&#34;: &#34;tc_789&#34;,  &#34;details&#34;: &#34;Resolved tool endpoint from local cache.&#34;}"><div></div></button></div></figure></div>
+<p>In this example, an implementor introduces a custom streaming trace event, <code>acme:trace_event</code>, to expose internal timing and resolution details for tool calls. Clients that recognize this extension can enhance their dashboards or adapt UX in real time, while other clients can safely ignore the event and still process all standard items and tokens in the stream.</p>
+<h3 id="extending-existing-schemas">Extending existing schemas</h3>
+<p>In addition to defining entirely new item or event types, implementors MAY extend existing schemas with additional, implementation-specific fields. This can be useful for surfacing richer metadata (for example, observability details, cache hints, or internal identifiers) without changing the core semantics of the specification.</p>
+<p>However, any such extensions inevitably reduce portability. Clients that rely on these extra fields will be more tightly coupled to a specific implementation, and trajectories or OpenAPI definitions that depend on them may not validate or behave identically across other Open Responses servers.</p>
+<p>To mitigate this, extensions to existing schemas SHOULD follow these guidelines:</p>
+<ul>
+<li>Keep all standard fields intact and unchanged in meaning; extensions MUST NOT alter required core behavior.</li>
+<li>Prefer optional fields so that portable clients can ignore them safely.</li>
+<li>Document extension fields clearly, including their types, allowed values, and failure modes.</li>
+<li>Avoid building cross-vendor contracts on top of non-standard fields; instead, propose commonly-used patterns for inclusion in the core spec via the TSC process.</li>
+</ul>
+<p>In practice, this means that extending existing schemas is an acceptable way to evolve an implementation, but implementors SHOULD treat those extensions as vendor-specific and avoid assuming that other Open Responses-compatible APIs will recognize or honor them.</p>  </article> </section> <aside class="hidden lg:block"> <div class="sticky top-24"> <div class="text-xs font-semibold tracking-[0.2em] text-slate-400 uppercase">
+On this page
+</div> <div class="toc-wrap mt-4 text-sm text-slate-600"> <div class="toc-rail" aria-hidden="true"> <span class="toc-rail-track"></span> <span class="toc-rail-fill"></span> <span class="toc-indicator">•</span> </div> <div class="toc-list" data-toc-list></div> </div> </div> </aside> </main> <footer class="mx-auto max-w-6xl space-y-2 border-t border-slate-200 px-4 py-6 text-sm text-slate-600 sm:px-6"> <p>Copyright © Open Responses a Series of LF Projects, LLC</p> <p>
+For web site terms of use, trademark policy and other project policies
+          please see <a class="underline" href="https://lfprojects.org">https://lfprojects.org</a>.
+</p> </footer> </div> <div class="lightbox" id="lightbox" aria-hidden="true"> <div class="lightbox-content" role="document"></div> <button class="lightbox-close" type="button">Close</button> </div> <script>
+  (() => {
+    const lightbox = document.getElementById("lightbox");
+    if (!lightbox) return;
+    const lightboxContent = lightbox.querySelector(".lightbox-content");
+    const lightboxClose = lightbox.querySelector(".lightbox-close");
+
+    const openLightbox = (node) => {
+      lightboxContent.replaceChildren(node);
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+    };
+
+    const closeLightbox = () => {
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxContent.replaceChildren();
+    };
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+
+    lightboxClose?.addEventListener("click", closeLightbox);
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeLightbox();
+    });
+
+    const article = document.querySelector("article.prose");
+    if (!article) return;
+    const lightboxTargets = Array.from(
+      article.querySelectorAll("[data-lightbox]"),
+    );
+
+    for (const target of lightboxTargets) {
+      if (target.hasAttribute("data-scrollable")) {
+        if (!target.closest(".diagram-scroll")) {
+          const wrapper = document.createElement("div");
+          wrapper.className = "diagram-scroll";
+          target.parentNode?.insertBefore(wrapper, target);
+          wrapper.appendChild(target);
+        }
+      }
+
+      target.style.cursor = "zoom-in";
+      target.addEventListener("click", () => {
+        const clone = target.cloneNode(true);
+        clone.removeAttribute("data-lightbox");
+        clone.style.cursor = "default";
+        openLightbox(clone);
+      });
+    }
+  })();
+</script> <script>
+      (() => {
+        const root = document.body;
+        const setScrolled = () => {
+          root.classList.toggle("is-scrolled", window.scrollY > 0);
+        };
+        setScrolled();
+        window.addEventListener("scroll", setScrolled, { passive: true });
+
+        const lightbox = document.getElementById("lightbox");
+        const article = document.querySelector("article.prose");
+
+        if (lightbox && article) {
+          const lightboxContent = lightbox.querySelector(".lightbox-content");
+          const lightboxClose = lightbox.querySelector(".lightbox-close");
+
+          const openLightbox = (node) => {
+            lightboxContent.replaceChildren(node);
+            lightbox.classList.add("is-open");
+            lightbox.setAttribute("aria-hidden", "false");
+          };
+
+          const closeLightbox = () => {
+            lightbox.classList.remove("is-open");
+            lightbox.setAttribute("aria-hidden", "true");
+            lightboxContent.replaceChildren();
+          };
+
+          lightbox.addEventListener("click", (event) => {
+            if (event.target === lightbox) closeLightbox();
+          });
+
+          lightboxClose?.addEventListener("click", closeLightbox);
+
+          window.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") closeLightbox();
+          });
+
+          const lightboxTargets = Array.from(
+            article.querySelectorAll("[data-lightbox]"),
+          );
+
+          for (const target of lightboxTargets) {
+            if (target.hasAttribute("data-scrollable")) {
+              if (!target.closest(".diagram-scroll")) {
+                const wrapper = document.createElement("div");
+                wrapper.className = "diagram-scroll";
+                target.parentNode?.insertBefore(wrapper, target);
+                wrapper.appendChild(target);
+              }
+            }
+
+            target.style.cursor = "zoom-in";
+            target.addEventListener("click", () => {
+              const clone = target.cloneNode(true);
+              clone.removeAttribute("data-lightbox");
+              clone.style.cursor = "default";
+              openLightbox(clone);
+            });
+          }
+        }
+
+        const anchorScope = document.querySelector("[data-toc-content]");
+        const anchorHeadings = Array.from(
+          anchorScope?.querySelectorAll(
+            "h1[id]:not(.no-toc), h2[id]:not(.no-toc), h3[id]:not(.no-toc)",
+          ) ?? [],
+        );
+
+        const copyText = async (value) => {
+          if (navigator.clipboard?.writeText) {
+            await navigator.clipboard.writeText(value);
+            return;
+          }
+
+          const temp = document.createElement("textarea");
+          temp.value = value;
+          temp.setAttribute("readonly", "true");
+          temp.style.position = "absolute";
+          temp.style.left = "-9999px";
+          document.body.appendChild(temp);
+          temp.select();
+          document.execCommand("copy");
+          temp.remove();
+        };
+
+        for (const heading of anchorHeadings) {
+          if (heading.querySelector(".heading-anchor")) continue;
+          const anchor = document.createElement("a");
+          anchor.className = "heading-anchor";
+          anchor.href = `#${heading.id}`;
+          anchor.setAttribute("aria-label", "Copy link to this section");
+          anchor.textContent = "#";
+          heading.addEventListener("click", async (event) => {
+            event.preventDefault();
+            const url = `${window.location.origin}${window.location.pathname}#${heading.id}`;
+            try {
+              await copyText(url);
+            } catch (error) {
+              console.error("Failed to copy heading link", error);
+            }
+            history.replaceState(null, "", anchor.href);
+            anchor.classList.add("is-copied");
+            setTimeout(() => anchor.classList.remove("is-copied"), 1400);
+          });
+          heading.insertBefore(anchor, heading.firstChild);
+        }
+
+        const tocWrap = document.querySelector(".toc-wrap");
+        const tocIndicator = document.querySelector(".toc-indicator");
+        const tocList = tocWrap?.querySelector("[data-toc-list]");
+        const tocScope = document.querySelector("[data-toc-content]");
+        const headings = Array.from(
+          tocScope?.querySelectorAll(
+            "h1[id]:not(.no-toc), h2[id]:not(.no-toc)",
+          ) ?? [],
+        );
+
+        if (!tocWrap || !tocList || !headings.length) {
+          tocWrap?.classList.add("hidden");
+          return;
+        }
+
+        tocList.replaceChildren();
+        for (const heading of headings) {
+          const depth = heading.tagName === "H1" ? 1 : 2;
+          const link = document.createElement("a");
+          link.className = `toc-link block depth-${depth}`;
+          link.dataset.tocLink = "";
+          link.href = `#${heading.id}`;
+          const text = document.createElement("span");
+          text.className = "toc-text";
+          const headingClone = heading.cloneNode(true);
+          headingClone.querySelectorAll(".heading-anchor").forEach((node) => {
+            node.remove();
+          });
+          text.textContent = headingClone.textContent?.trim() || heading.id;
+          link.append(text);
+          tocList.append(link);
+        }
+
+        const tocLinks = Array.from(
+          tocWrap.querySelectorAll("[data-toc-link]"),
+        );
+
+        const updateActiveToc = () => {
+          let activeId = headings[0]?.id;
+          for (const heading of headings) {
+            const { top } = heading.getBoundingClientRect();
+            if (top <= 140) activeId = heading.id;
+          }
+          for (const link of tocLinks) {
+            const hash = link.getAttribute("href")?.replace("#", "");
+            const isActive = hash === activeId;
+            link.classList.toggle("is-active", isActive);
+          }
+        };
+
+        const getHeadingTops = () =>
+          headings.map(
+            (heading) => heading.getBoundingClientRect().top + window.scrollY,
+          );
+
+        const getLinkOffsets = () => {
+          if (!tocWrap) return [];
+          return tocLinks.map((link) => ({
+            top: link.offsetTop,
+            height: link.offsetHeight,
+          }));
+        };
+
+        let tocRailStart = 0;
+
+        const updateProgress = () => {
+          if (!tocWrap || !tocIndicator || !headings.length) return;
+          const headingTops = getHeadingTops();
+          const linkOffsets = getLinkOffsets();
+          if (!linkOffsets.length || !tocIndicator) return;
+          const indicatorHeight = tocIndicator.offsetHeight || 0;
+
+          const scrollY = window.scrollY + 140;
+          let index = 0;
+          for (let i = 0; i < headingTops.length; i += 1) {
+            if (scrollY >= headingTops[i]) index = i;
+          }
+          const nextIndex = Math.min(index + 1, headingTops.length - 1);
+          const startTop = headingTops[index];
+          const endTop = headingTops[nextIndex] || startTop;
+          const span = Math.max(endTop - startTop, 1);
+          const progress = Math.min(
+            1,
+            Math.max(0, (scrollY - startTop) / span),
+          );
+
+          const startOffset = linkOffsets[index] ??
+            linkOffsets[0] ?? { top: 0, height: 0 };
+          const endOffset = linkOffsets[nextIndex] ??
+            startOffset ?? { top: 0, height: 0 };
+
+          const startPosition =
+            startOffset.top + (startOffset.height - indicatorHeight) / 2;
+          const endPosition =
+            endOffset.top + (endOffset.height - indicatorHeight) / 2;
+          const position =
+            startPosition + (endPosition - startPosition) * progress;
+          tocIndicator.style.transform = `translateY(${position}px)`;
+          requestAnimationFrame(() => {
+            if (!tocWrap || !tocIndicator) return;
+            const wrapRect = tocWrap.getBoundingClientRect();
+            const indicatorRect = tocIndicator.getBoundingClientRect();
+            const center =
+              indicatorRect.top - wrapRect.top + indicatorRect.height / 2;
+            const fill = Math.max(0, center - tocRailStart);
+            tocWrap.style.setProperty("--toc-indicator", `${fill}px`);
+          });
+        };
+
+        const updateToc = () => {
+          updateActiveToc();
+          updateProgress();
+          if (tocWrap && tocIndicator && tocLinks.length) {
+            const offsets = getLinkOffsets();
+            if (offsets.length) {
+              const indicatorHeight = tocIndicator.offsetHeight || 0;
+              const first = offsets[0];
+              const last = offsets[offsets.length - 1];
+              const start = first.top + (first.height - indicatorHeight) / 2;
+              const end =
+                last.top +
+                (last.height - indicatorHeight) / 2 +
+                indicatorHeight;
+              const bottom = Math.max(0, tocWrap.offsetHeight - end);
+              tocRailStart = start;
+              tocWrap.style.setProperty("--toc-rail-start", `${start}px`);
+              tocWrap.style.setProperty("--toc-rail-end", `${bottom}px`);
+            }
+          }
+        };
+
+        updateToc();
+        window.addEventListener("scroll", updateToc, { passive: true });
+        window.addEventListener("resize", updateToc);
+        window.addEventListener("hashchange", updateToc);
+        tocLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            requestAnimationFrame(updateToc);
+            setTimeout(updateToc, 80);
+            setTimeout(updateToc, 200);
+          });
+        });
+      })();
+    </script> </body> </html>
