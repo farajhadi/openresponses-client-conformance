@@ -9,6 +9,10 @@ This project checks how **9 popular Python libraries** behave when a server send
 replays 19 hand-written cases byte for byte, and a small script per library uses it the way the library's own docs
 show. The fake server needs no API key and makes no model calls, so everything is free and runs offline.
 
+Why it matters: when Open Responses launched, Simon Willison (developer and AI blogger) wrote on
+[15 Jan 2026](https://simonwillison.net/2026/Jan/15/open-responses/) that the spec has conformance tests for servers,
+and "What's missing is the equivalent for clients." This is a small, Python-only start on that.
+
 **Read this as "behaviour against our 17 spec-derived cases", not a quality ranking.** The cases cover the corners of
 the spec, not everyday use. Several libraries are built on top of the OpenAI Python SDK, so their results are not
 independent of each other.
