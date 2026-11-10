@@ -27,3 +27,14 @@ below with the reason.
 
 ## Changes after locking
 (none yet)
+
+## Changes after the first scoring run (2026-11-10, logged before writing the README)
+1. **Per-case timeout 30 s -> 120 s.** The first run timed out 18 cases. Rerunning them showed most were slow start-up
+   (litellm takes about 20-40 s just to import and make one call on this computer), not hangs, so 30 s was unfair. Only cases
+   that still give no result after 120 s count as hangs. Only the timed-out cases were rerun.
+2. **Two scoring adjustments, reported next to the locked score, never instead of it** (`report.py`):
+   - pydantic-ai, openai-agents and llama-index never expose a response status to the user. On success cases the status
+     check is skipped for them. On `response_incomplete` they still fail, because the user can't tell the answer was cut off.
+   - `response_failed` passes if the library raises or reports `failed`. The case was written to catch "reports success";
+     raising is a normal way to report failure, and the locked rule (status must equal `failed`) marked raising as a fail.
+Both changes were made after seeing the first run, so the locked scores stay in the scorecard.

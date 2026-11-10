@@ -8,6 +8,7 @@ sys.path.insert(0, "cases")
 from cases import CASES
 
 PORT = 8765
+TIMEOUT = int(os.environ.get("CASE_TIMEOUT", "120"))  # seconds per case, including Python start-up and imports
 ADAPTERS = json.load(open("clients/adapters.json"))  # {name: [argv...]}
 
 
@@ -24,7 +25,7 @@ def judge(expect, got):
     return True
 
 
-def main(only=None):
+def main(only=None, only_timeouts=False):
     srv = subprocess.Popen([sys.executable, "server/fake_server.py", "--port", str(PORT), "--log", "logs/server.log"],
                            stdout=subprocess.PIPE)
     srv.stdout.readline()
@@ -33,16 +34,21 @@ def main(only=None):
         for name, argv in ADAPTERS.items():
             if only and name not in only:
                 continue
-            res[name] = {}
+            prev = {}
+            if os.path.exists("results/scorecard.json"):
+                prev = json.load(open("results/scorecard.json")).get(name, {})
+            res[name] = dict(prev) if only_timeouts else {}
             for c in CASES:
+                if only_timeouts and not str(prev.get(c["id"], {}).get("got", {}).get("raised", "")).startswith("TIMEOUT"):
+                    continue
                 base = f"http://127.0.0.1:{PORT}/case/{c['id']}/v1"
                 t0 = time.time()
                 try:
-                    p = subprocess.run(argv + [base], capture_output=True, text=True, timeout=30)
+                    p = subprocess.run(argv + [base], capture_output=True, text=True, timeout=TIMEOUT)
                     line = (p.stdout.strip().splitlines() or ["{}"])[-1]
                     got = json.loads(line) if line.startswith("{") else {"raised": "no output: " + p.stderr[-300:]}
                 except subprocess.TimeoutExpired:
-                    got = {"raised": "TIMEOUT (hung 30s)"}
+                    got = {"raised": f"TIMEOUT (no result after {TIMEOUT}s)"}
                 if "not_supported" in got:
                     verdict = "not_supported"
                 else:
@@ -58,4 +64,7 @@ def main(only=None):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:] or None)
+    args = sys.argv[1:]
+    ot = "--only-timeouts" in args
+    args = [a for a in args if a != "--only-timeouts"]
+    main(args or None, ot)

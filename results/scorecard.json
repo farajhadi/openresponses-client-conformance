@@ -1,0 +1,1778 @@
+{
+ "openai-python": {
+  "baseline": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 8.04
+  },
+  "no_done_sentinel": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 7.3
+  },
+  "unknown_vendor_event": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 8.76
+  },
+  "unknown_vendor_event_first": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "RuntimeError: Expected to have received `response.created` before `acme:trace_event`"
+   },
+   "secs": 5.48
+  },
+  "unknown_item_type": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 7.5
+  },
+  "extra_fields": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 8.15
+  },
+  "logprobs_absent": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 6.9
+  },
+  "function_call_split_args": {
+   "verdict": "pass",
+   "got": {
+    "text": null,
+    "function_call": {
+     "name": "get_weather",
+     "arguments": "{\"city\": \"Paris\", \"units\": \"c\"}"
+    },
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 6.89
+  },
+  "function_call_unicode_args": {
+   "verdict": "pass",
+   "got": {
+    "text": null,
+    "function_call": {
+     "name": "search",
+     "arguments": "{\"q\": \"مرحبا 😀\"}"
+    },
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 7.08
+  },
+  "byte_by_byte": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 7.72
+  },
+  "utf8_split_across_chunks": {
+   "verdict": "pass",
+   "got": {
+    "text": "مرحبا بالعالم 😀",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 7.72
+  },
+  "crlf_newlines": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 8.1
+  },
+  "cr_newlines": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 6.55
+  },
+  "comment_lines": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 5.51
+  },
+  "multiline_data": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 7.71
+  },
+  "multiple_content_parts": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 9.07
+  },
+  "response_failed": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "RuntimeError: Didn't receive a `response.completed` event."
+   },
+   "secs": 2.29
+  },
+  "response_incomplete": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "RuntimeError: Didn't receive a `response.completed` event."
+   },
+   "secs": 5.46
+  },
+  "truncated_stream": {
+   "verdict": "pass",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "RuntimeError: Didn't receive a `response.completed` event."
+   },
+   "secs": 7.37
+  }
+ },
+ "openresponses-client": {
+  "baseline": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 1.91
+  },
+  "no_done_sentinel": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 1.63
+  },
+  "unknown_vendor_event": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 1.93
+  },
+  "unknown_vendor_event_first": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 2.44
+  },
+  "unknown_item_type": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 2.57
+  },
+  "extra_fields": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 2.05
+  },
+  "logprobs_absent": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 2.01
+  },
+  "function_call_split_args": {
+   "verdict": "pass",
+   "got": {
+    "text": null,
+    "function_call": {
+     "name": "get_weather",
+     "arguments": "{\"city\": \"Paris\", \"units\": \"c\"}"
+    },
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 2.18
+  },
+  "function_call_unicode_args": {
+   "verdict": "pass",
+   "got": {
+    "text": null,
+    "function_call": {
+     "name": "search",
+     "arguments": "{\"q\": \"مرحبا 😀\"}"
+    },
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 1.26
+  },
+  "byte_by_byte": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 1.56
+  },
+  "utf8_split_across_chunks": {
+   "verdict": "pass",
+   "got": {
+    "text": "مرحبا بالعالم 😀",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 1.67
+  },
+  "crlf_newlines": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 1.88
+  },
+  "cr_newlines": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 1.4
+  },
+  "comment_lines": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 1.98
+  },
+  "multiline_data": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 1.93
+  },
+  "multiple_content_parts": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 0.92
+  },
+  "response_failed": {
+   "verdict": "pass",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": "failed",
+    "raised": null
+   },
+   "secs": 1.4
+  },
+  "response_incomplete": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, wor",
+    "function_call": null,
+    "status": "incomplete",
+    "raised": null
+   },
+   "secs": 1.63
+  },
+  "truncated_stream": {
+   "verdict": "pass",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "ResponseStreamError: The stream ended without a terminal response event"
+   },
+   "secs": 1.57
+  }
+ },
+ "openresponses-python": {
+  "baseline": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "JSONDecodeError: Expecting value: line 1 column 2 (char 1)"
+   },
+   "secs": 0.96
+  },
+  "no_done_sentinel": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 0.88
+  },
+  "unknown_vendor_event": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "JSONDecodeError: Expecting value: line 1 column 2 (char 1)"
+   },
+   "secs": 0.99
+  },
+  "unknown_vendor_event_first": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "JSONDecodeError: Expecting value: line 1 column 2 (char 1)"
+   },
+   "secs": 1.13
+  },
+  "unknown_item_type": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "JSONDecodeError: Expecting value: line 1 column 2 (char 1)"
+   },
+   "secs": 1.08
+  },
+  "extra_fields": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "JSONDecodeError: Expecting value: line 1 column 2 (char 1)"
+   },
+   "secs": 0.91
+  },
+  "logprobs_absent": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "JSONDecodeError: Expecting value: line 1 column 2 (char 1)"
+   },
+   "secs": 1.12
+  },
+  "function_call_split_args": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "JSONDecodeError: Expecting value: line 1 column 2 (char 1)"
+   },
+   "secs": 1.18
+  },
+  "function_call_unicode_args": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "JSONDecodeError: Expecting value: line 1 column 2 (char 1)"
+   },
+   "secs": 0.84
+  },
+  "byte_by_byte": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "JSONDecodeError: Expecting value: line 1 column 2 (char 1)"
+   },
+   "secs": 1.1
+  },
+  "utf8_split_across_chunks": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "JSONDecodeError: Expecting value: line 1 column 2 (char 1)"
+   },
+   "secs": 1.32
+  },
+  "crlf_newlines": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "JSONDecodeError: Expecting value: line 1 column 2 (char 1)"
+   },
+   "secs": 1.2
+  },
+  "cr_newlines": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "JSONDecodeError: Expecting value: line 1 column 2 (char 1)"
+   },
+   "secs": 1.21
+  },
+  "comment_lines": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "JSONDecodeError: Expecting value: line 1 column 2 (char 1)"
+   },
+   "secs": 1.16
+  },
+  "multiline_data": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 29 (char 28)"
+   },
+   "secs": 1.17
+  },
+  "multiple_content_parts": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "JSONDecodeError: Expecting value: line 1 column 2 (char 1)"
+   },
+   "secs": 1.16
+  },
+  "response_failed": {
+   "verdict": "pass",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": "failed",
+    "raised": null
+   },
+   "secs": 1.08
+  },
+  "response_incomplete": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, wor",
+    "function_call": null,
+    "status": "incomplete",
+    "raised": null
+   },
+   "secs": 1.2
+  },
+  "truncated_stream": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, ",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 1.0
+  }
+ },
+ "litellm": {
+  "baseline": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 18.89
+  },
+  "no_done_sentinel": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 15.11
+  },
+  "unknown_vendor_event": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 19.04
+  },
+  "unknown_vendor_event_first": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 29.54
+  },
+  "unknown_item_type": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 29.69
+  },
+  "extra_fields": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 29.28
+  },
+  "logprobs_absent": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 34.18
+  },
+  "function_call_split_args": {
+   "verdict": "pass",
+   "got": {
+    "text": null,
+    "function_call": {
+     "name": "get_weather",
+     "arguments": "{\"city\": \"Paris\", \"units\": \"c\"}"
+    },
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 30.72
+  },
+  "function_call_unicode_args": {
+   "verdict": "pass",
+   "got": {
+    "text": null,
+    "function_call": {
+     "name": "search",
+     "arguments": "{\"q\": \"مرحبا 😀\"}"
+    },
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 31.13
+  },
+  "byte_by_byte": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 33.25
+  },
+  "utf8_split_across_chunks": {
+   "verdict": "pass",
+   "got": {
+    "text": "مرحبا بالعالم 😀",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 32.31
+  },
+  "crlf_newlines": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 31.07
+  },
+  "cr_newlines": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 31.88
+  },
+  "comment_lines": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 31.13
+  },
+  "multiline_data": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 30.0
+  },
+  "multiple_content_parts": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 30.55
+  },
+  "response_failed": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "MidStreamFallbackError: litellm.MidStreamFallbackError: litellm.InternalServerError: InternalServerError: OpenAIException - model crashed Original exception: InternalServerError: litellm.InternalServerError: InternalServerError: OpenAIException - model crashed"
+   },
+   "secs": 28.36
+  },
+  "response_incomplete": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, wor",
+    "function_call": null,
+    "status": "incomplete",
+    "raised": null
+   },
+   "secs": 32.97
+  },
+  "truncated_stream": {
+   "verdict": "pass",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "APIConnectionError: litellm.APIConnectionError: openai closed the responses stream before any terminal event (response.completed, response.incomplete or response.failed)"
+   },
+   "secs": 28.83
+  }
+ },
+ "langchain-openai": {
+  "baseline": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 15.24
+  },
+  "no_done_sentinel": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 15.33
+  },
+  "unknown_vendor_event": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 12.68
+  },
+  "unknown_vendor_event_first": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 14.78
+  },
+  "unknown_item_type": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 65.69
+  },
+  "extra_fields": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 17.32
+  },
+  "logprobs_absent": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 14.89
+  },
+  "function_call_split_args": {
+   "verdict": "pass",
+   "got": {
+    "text": null,
+    "function_call": {
+     "name": "get_weather",
+     "arguments": "{\"city\": \"Paris\", \"units\": \"c\"}"
+    },
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 14.64
+  },
+  "function_call_unicode_args": {
+   "verdict": "pass",
+   "got": {
+    "text": null,
+    "function_call": {
+     "name": "search",
+     "arguments": "{\"q\": \"مرحبا 😀\"}"
+    },
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 12.72
+  },
+  "byte_by_byte": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 14.77
+  },
+  "utf8_split_across_chunks": {
+   "verdict": "pass",
+   "got": {
+    "text": "مرحبا بالعالم 😀",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 14.82
+  },
+  "crlf_newlines": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 11.84
+  },
+  "cr_newlines": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 13.8
+  },
+  "comment_lines": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 13.56
+  },
+  "multiline_data": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 16.09
+  },
+  "multiple_content_parts": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 11.99
+  },
+  "response_failed": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "ValueError: ResponseError(code='server_error', message='model crashed', misalignment=None, param=None, type=None)"
+   },
+   "secs": 13.13
+  },
+  "response_incomplete": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, wor",
+    "function_call": null,
+    "status": "incomplete",
+    "raised": null
+   },
+   "secs": 13.69
+  },
+  "truncated_stream": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, ",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 11.56
+  }
+ },
+ "pydantic-ai": {
+  "baseline": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 12.21
+  },
+  "no_done_sentinel": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 14.15
+  },
+  "unknown_vendor_event": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 13.63
+  },
+  "unknown_vendor_event_first": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 13.5
+  },
+  "unknown_item_type": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 12.65
+  },
+  "extra_fields": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 11.73
+  },
+  "logprobs_absent": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 9.83
+  },
+  "function_call_split_args": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": {
+     "name": "get_weather",
+     "arguments": "{\"city\": \"Paris\", \"units\": \"c\"}"
+    },
+    "status": null,
+    "raised": null
+   },
+   "secs": 8.53
+  },
+  "function_call_unicode_args": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": {
+     "name": "search",
+     "arguments": "{\"q\": \"مرحبا 😀\"}"
+    },
+    "status": null,
+    "raised": null
+   },
+   "secs": 8.06
+  },
+  "byte_by_byte": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 9.19
+  },
+  "utf8_split_across_chunks": {
+   "verdict": "fail",
+   "got": {
+    "text": "مرحبا بالعالم 😀",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 10.8
+  },
+  "crlf_newlines": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 57.5
+  },
+  "cr_newlines": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 14.54
+  },
+  "comment_lines": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 11.61
+  },
+  "multiline_data": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 12.35
+  },
+  "multiple_content_parts": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 11.43
+  },
+  "response_failed": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "ModelServerError: status_code: 500, model_name: fake-model, body: {'code': 'server_error', 'message': 'model crashed'}"
+   },
+   "secs": 11.06
+  },
+  "response_incomplete": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, wor",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 10.84
+  },
+  "truncated_stream": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, ",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 10.81
+  }
+ },
+ "openai-agents": {
+  "baseline": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 15.24
+  },
+  "no_done_sentinel": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 11.5
+  },
+  "unknown_vendor_event": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 19.01
+  },
+  "unknown_vendor_event_first": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 13.16
+  },
+  "unknown_item_type": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 14.53
+  },
+  "extra_fields": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 13.01
+  },
+  "logprobs_absent": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 14.05
+  },
+  "function_call_split_args": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": {
+     "name": "get_weather",
+     "arguments": "{\"city\": \"Paris\", \"units\": \"c\"}"
+    },
+    "status": null,
+    "raised": null
+   },
+   "secs": 14.15
+  },
+  "function_call_unicode_args": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": {
+     "name": "search",
+     "arguments": "{\"q\": \"مرحبا 😀\"}"
+    },
+    "status": null,
+    "raised": null
+   },
+   "secs": 13.62
+  },
+  "byte_by_byte": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 13.7
+  },
+  "utf8_split_across_chunks": {
+   "verdict": "fail",
+   "got": {
+    "text": "مرحبا بالعالم 😀",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 12.91
+  },
+  "crlf_newlines": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 15.05
+  },
+  "cr_newlines": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 14.53
+  },
+  "comment_lines": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 12.94
+  },
+  "multiline_data": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 17.89
+  },
+  "multiple_content_parts": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 18.35
+  },
+  "response_failed": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "ModelBehaviorError: Responses stream ended with terminal event `response.failed`. status=failed; error=ResponseError(code='server_error', message='model crashed', misalignment=None, param=None, type=None)."
+   },
+   "secs": 17.56
+  },
+  "response_incomplete": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "ModelBehaviorError: Responses stream ended with terminal event `response.incomplete`. status=incomplete; incomplete_details=IncompleteDetails(reason='max_output_tokens')."
+   },
+   "secs": 15.4
+  },
+  "truncated_stream": {
+   "verdict": "pass",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": "ModelBehaviorError: Model did not produce a final response!"
+   },
+   "secs": 14.17
+  }
+ },
+ "any-llm": {
+  "baseline": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 17.6
+  },
+  "no_done_sentinel": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 21.11
+  },
+  "unknown_vendor_event": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 16.64
+  },
+  "unknown_vendor_event_first": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 16.65
+  },
+  "unknown_item_type": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 20.29
+  },
+  "extra_fields": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 18.0
+  },
+  "logprobs_absent": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 17.06
+  },
+  "function_call_split_args": {
+   "verdict": "pass",
+   "got": {
+    "text": null,
+    "function_call": {
+     "name": "get_weather",
+     "arguments": "{\"city\": \"Paris\", \"units\": \"c\"}"
+    },
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 19.85
+  },
+  "function_call_unicode_args": {
+   "verdict": "pass",
+   "got": {
+    "text": null,
+    "function_call": {
+     "name": "search",
+     "arguments": "{\"q\": \"مرحبا 😀\"}"
+    },
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 16.5
+  },
+  "byte_by_byte": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 20.47
+  },
+  "utf8_split_across_chunks": {
+   "verdict": "pass",
+   "got": {
+    "text": "مرحبا بالعالم 😀",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 18.38
+  },
+  "crlf_newlines": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 21.52
+  },
+  "cr_newlines": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 19.94
+  },
+  "comment_lines": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 19.21
+  },
+  "multiline_data": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 16.55
+  },
+  "multiple_content_parts": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": "completed",
+    "raised": null
+   },
+   "secs": 17.56
+  },
+  "response_failed": {
+   "verdict": "pass",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": "failed",
+    "raised": null
+   },
+   "secs": 17.35
+  },
+  "response_incomplete": {
+   "verdict": "pass",
+   "got": {
+    "text": "Hello, wor",
+    "function_call": null,
+    "status": "incomplete",
+    "raised": null
+   },
+   "secs": 18.26
+  },
+  "truncated_stream": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 19.8
+  }
+ },
+ "llama-index": {
+  "baseline": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 22.32
+  },
+  "no_done_sentinel": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 25.48
+  },
+  "unknown_vendor_event": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 25.07
+  },
+  "unknown_vendor_event_first": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 21.57
+  },
+  "unknown_item_type": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 22.03
+  },
+  "extra_fields": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 24.03
+  },
+  "logprobs_absent": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 21.35
+  },
+  "function_call_split_args": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": {
+     "name": "get_weather",
+     "arguments": "{\"city\": \"Paris\", \"units\": \"c\"}"
+    },
+    "status": null,
+    "raised": null
+   },
+   "secs": 21.74
+  },
+  "function_call_unicode_args": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": {
+     "name": "search",
+     "arguments": "{\"q\": \"مرحبا 😀\"}"
+    },
+    "status": null,
+    "raised": null
+   },
+   "secs": 21.61
+  },
+  "byte_by_byte": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 23.86
+  },
+  "utf8_split_across_chunks": {
+   "verdict": "fail",
+   "got": {
+    "text": "مرحبا بالعالم 😀",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 23.18
+  },
+  "crlf_newlines": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 23.14
+  },
+  "cr_newlines": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 22.46
+  },
+  "comment_lines": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 21.71
+  },
+  "multiline_data": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 24.27
+  },
+  "multiple_content_parts": {
+   "verdict": "fail",
+   "got": {
+    "text": "Hello, world!",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 24.12
+  },
+  "response_failed": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 25.67
+  },
+  "response_incomplete": {
+   "verdict": "fail",
+   "got": {
+    "text": null,
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 25.59
+  },
+  "truncated_stream": {
+   "verdict": "fail",
+   "got": {
+    "text": ", ",
+    "function_call": null,
+    "status": null,
+    "raised": null
+   },
+   "secs": 23.18
+  }
+ }
+}
