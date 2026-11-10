@@ -17,7 +17,9 @@ def main(base):
     text = "".join(b.text for b in msg.blocks if type(b).__name__ == "TextBlock")
     # Only the response.completed chunk carries the full message; on a cut-off or incomplete stream, fall back to the
     # joined text deltas, which is what a user printing the stream sees (change after the first run, see PLAN.md).
-    emit(text=text or deltas or None, function_call=fc, status=None)
+    if type(last.raw).__name__ != "ResponseCompletedEvent":
+        text = deltas  # no completed chunk: the last message holds only the last delta
+    emit(text=text or None, function_call=fc, status=None)
 
 
 guard(main)
