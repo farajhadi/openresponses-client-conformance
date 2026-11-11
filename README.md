@@ -1,5 +1,7 @@
 # Do LLM client libraries handle streamed responses correctly?
 
+[![CI](https://github.com/farajhadi/openresponses-client-conformance/actions/workflows/ci.yml/badge.svg)](https://github.com/farajhadi/openresponses-client-conformance/actions/workflows/ci.yml)
+
 When a chat model "types" its answer to you, the server sends the answer as a stream of small events. The
 [Open Responses specification](https://www.openresponses.org/specification) says what those events can look like,
 and it allows a few awkward-but-legal things: an optional `[DONE]` line at the end, extra event types from a vendor,

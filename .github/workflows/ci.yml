@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  server-self-test:
+    name: Fake server self-test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run fake server self-test
+        run: python tests/test_server.py
+
+  openai-sdk-repro:
+    name: OpenAI SDK repro (pinned)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install openai at the pinned version
+        run: pip install "openai==3.48.0"
+      - name: Run the OpenAI SDK repro against the fake server
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: |
+          set -euo pipefail
+          python server/fake_server.py --port 8765 > server-stdout.txt 2>server-stderr.txt &
+          for i in $(seq 1 50); do
+            if grep -q serving server-stdout.txt 2>/dev/null; then
+              break
+            fi
+            sleep 0.1
+          done
+          grep -q serving server-stdout.txt
+          python repro/openai_python.py 8765 | tee repro-out.txt
+          grep -q "response_incomplete:" repro-out.txt
+          grep -q "unknown_vendor_event_first:" repro-out.txt
