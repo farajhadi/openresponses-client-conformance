@@ -62,3 +62,9 @@ Both changes were made after seeing the first run, so the locked scores stay in 
   on status alone, because our adapter stops the run inside the tool before pydantic-ai builds a final response. That's
   our adapter's doing, so the status check is skipped on pydantic-ai's tool-call cases (`status_on_tool_calls: false`
   in `clients/adapters_meta.json`); the function name and arguments are still checked.
+
+## Wording correction (2026-11-11)
+The OpenAI Python SDK write-up was tightened: the stream helper does deliver the text deltas ("Hello, wor");
+what is missing is a final assembled response (`get_final_response()` is unavailable after the exception) and an
+error that says the answer was cut off. The earlier "throws away a cut-off answer" wording overclaimed. Historical
+notes above are left as written.

@@ -39,11 +39,12 @@ of our adapter code (output in [`repro/OUTPUT.txt`](repro/OUTPUT.txt)).
   This library tries to read that line as JSON and crashes, so it fails every case that ends that way (13 of the 17).
   This is one bug, not 13: the same stream without `[DONE]` works. Separately, it reads each `data:` line on its own
   instead of joining multi-line data as the streaming standard requires (1 case).
-- **The OpenAI Python SDK throws away a cut-off answer.** When the model stops early (for example at a length limit),
-  the server sends `response.incomplete`. The SDK's streaming helper streams the text, then raises
-  "Didn't receive a `response.completed` event", which doesn't say the answer was cut off, and the final result has
-  no text. It also crashes if a vendor's custom event arrives before the first standard event, which the spec says
-  clients must ignore safely.
+- **The OpenAI Python SDK's stream helper gives no final result for a cut-off answer, and its error doesn't say why.**
+  When the model stops early (for example at a length limit), the server sends `response.incomplete`. The helper
+  (`client.responses.stream`) does stream the text deltas — the app receives "Hello, wor" — then raises a
+  `RuntimeError` ("Didn't receive a `response.completed` event") that doesn't say the answer was cut off. After the
+  exception, `get_final_response()` is unavailable, so the final assembled response is lost. It also crashes if a
+  vendor's custom event arrives before the first standard event, which the spec says clients must ignore safely.
 - **llama-index reports a failed answer as an empty success.** On `response.failed` it raises nothing and returns an
   empty message. The failure is visible only if you dig into the raw provider object attached to each chunk. On a
   cut-off answer it likewise gives no sign that the answer is incomplete.
