@@ -82,7 +82,7 @@ text was not measured). langchain-openai, pydantic-ai, llama-index and openrespo
 text as if it were the whole answer. any-llm returns nothing with no error.
 
 Everything else passed: vendor events mid-stream, extra fields, missing `logprobs`, function-call arguments split
-anywhere (including mid-way through an emoji), one byte at a time, `\r\n` and `\r` line endings, keep-alive comments
+anywhere (including mid-way through an emoji), sent in 1-byte writes (TCP may merge them, so read sizes aren't guaranteed), `\r\n` and `\r` line endings, keep-alive comments
 and several content parts.
 
 Why it matters: this addresses a gap Simon Willison (developer and AI blogger) described on
@@ -119,6 +119,8 @@ Python-only start on that.
   the repro scripts are there so each failure can be checked without our adapters.
 - Python only. JavaScript libraries are installed under `clients/js` but haven't been tested yet.
 - No bugs have been reported upstream. They are written up here only.
+- The byte-by-byte case writes and flushes the stream one byte at a time. TCP may still merge those writes, so a
+  client is not guaranteed to read one byte at a time.
 
 ## Reproduce
 
