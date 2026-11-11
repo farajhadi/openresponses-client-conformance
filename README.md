@@ -48,13 +48,36 @@ of our adapter code (output in [`repro/OUTPUT.txt`](repro/OUTPUT.txt)).
 - **llama-index reports a failed answer as an empty success.** On `response.failed` it raises nothing and returns an
   empty message. The failure is visible only if you dig into the raw provider object attached to each chunk. On a
   cut-off answer it likewise gives no sign that the answer is incomplete.
-- **Partial text lost (not scored):** openai-agents and the OpenAI SDK both raise an error on a cut-off answer. That
-  tells you it was cut off (openai-agents says "status=incomplete"), but the text already streamed isn't in the final
-  result.
-- **Streams that just stop (a separate "robustness" case, not in the score).** If the connection ends with no final
-  event, openresponses-client, litellm, openai-agents and the OpenAI SDK raise an error. langchain-openai,
-  pydantic-ai, llama-index and openresponses-python hand back the partial text as if it were the whole answer, and
-  any-llm returns nothing with no error.
+
+Two separate questions for cut-off and failed answers (only the first is in the score). Keeping the partial text
+is only useful when the library also signals the cut-off. Full tables are in
+[`results/scorecard.md`](results/scorecard.md).
+
+**Cut-off answer** (the model stopped early; text sent: "Hello, wor"):
+
+| Library | Knows it failed or was cut off | Keeps the partial text |
+|---|---|---|
+| openresponses-client | yes | yes, in the recorded result |
+| litellm | yes | yes, in the recorded result |
+| langchain-openai | yes | yes, in the recorded result |
+| any-llm-sdk | yes | yes, in the recorded result |
+| pydantic-ai-slim | yes | yes, in the recorded result |
+| openai-agents | yes | yes, from streamed events (not in the final result) |
+| openai (Python SDK) | no | yes, from streamed events (not in the final result) |
+| llama-index-llms-openai | no | yes, in the recorded result |
+| openresponses-python | yes | yes, in the recorded result |
+
+For openai-agents and the OpenAI SDK, the standalone repros show the app does receive the streamed text ("Hello, wor"),
+but it is not in the final assembled result. For llama-index, the recorded result is the joined stream deltas; the
+repro's high-level `last.message.content` was empty.
+
+**Failed answer** (the model crashed; no text was sent): every library except llama-index tells the app it failed.
+llama-index returns an empty success.
+
+**Stream that just stops** (a separate "robustness" case, not in the score; text sent: "Hello, ").
+openresponses-client, litellm, openai-agents and the OpenAI SDK raise an error (whether they also kept the streamed
+text was not measured). langchain-openai, pydantic-ai, llama-index and openresponses-python hand back the partial
+text as if it were the whole answer. any-llm returns nothing with no error.
 
 Everything else passed: vendor events mid-stream, extra fields, missing `logprobs`, function-call arguments split
 anywhere (including mid-way through an emoji), one byte at a time, `\r\n` and `\r` line endings, keep-alive comments
@@ -78,7 +101,8 @@ Python-only start on that.
      succeed.
   2. On a failed response, raising an error counts as correctly reporting the failure.
   3. On a cut-off response, it passes if the user can tell it was cut off: either the status says incomplete, or the
-     error message does. Losing the partial text is noted separately, not scored.
+     error message does. Whether the partial text still reaches the user is a separate, unscored column in the
+     scorecard, next to whether the app can tell it failed.
 - **Our own mistakes, found and fixed.** The repro scripts showed two adapter bugs, both of them ours: pydantic-ai
   *does* report a cut-off answer (as `finish_reason="length"`), and llama-index only puts the full text on the final
   "completed" chunk. Both adapters were fixed and those libraries rescored. Earlier, a 30-second time limit turned out

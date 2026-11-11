@@ -14,7 +14,63 @@ Behaviour against our 17 spec-derived cases (11 MUST + 6 SSE). This is not an ov
 | llama-index | 15/17 | 0/17 | 2 | pass | fail | response_failed, response_incomplete |
 | openresponses-python | 3/17 | 3/17 | 2 | fail | fail | baseline, unknown_vendor_event, unknown_vendor_event_first, extra_fields, logprobs_absent, function_call_split_args, function_call_unicode_args, byte_by_byte, utf8_split_across_chunks, crlf_newlines, cr_newlines, comment_lines, multiline_data, multiple_content_parts |
 
-**Partial text lost on a cut-off answer** (not scored): openai-agents, openai-python. These raise an error, so the text already streamed ("Hello, wor") is not in the final result.
+## Cut-off and failed answers: two separate questions
+
+The headline score only counts whether the app can tell something went wrong (terminal-state).
+Whether the library also keeps the text generated before the interruption is reported here, and is
+not part of the score. Keeping that partial text is only useful when the library also signals the
+cut-off: returning it as if the answer were complete is worse than raising an error.
+On the truncated-stream robustness case, langchain-openai, pydantic-ai, llama-index and
+openresponses-python return the partial text as if it were complete.
+
+Sources: the recorded result is `text` in `results/scorecard.json`. For openai-python and
+openai-agents on `response_incomplete`, streamed-event text comes from `repro/OUTPUT.txt`.
+Where the recorded result has no text and no repro measured the stream, the cell says so.
+
+### response_incomplete (model stopped early; text sent: "Hello, wor")
+
+| Library | Knows it failed or was cut off | Keeps the partial text |
+|---|---|---|
+| pydantic-ai | yes | yes, in the recorded result |
+| openresponses-client | yes | yes, in the recorded result |
+| openai-agents | yes | yes, from streamed events (not in the final result) |
+| litellm | yes | yes, in the recorded result |
+| langchain-openai | yes | yes, in the recorded result |
+| any-llm | yes | yes, in the recorded result |
+| openai-python | no | yes, from streamed events (not in the final result) |
+| llama-index | no | yes, in the recorded result |
+| openresponses-python | yes | yes, in the recorded result |
+
+llama-index's recorded result is the text of the joined stream deltas (see the adapter). The
+standalone repro's high-level `last.message.content` was empty; the text is still in the chunks.
+
+### response_failed (model crashed; no text was sent)
+
+| Library | Knows it failed or was cut off | Keeps the partial text |
+|---|---|---|
+| pydantic-ai | yes | n/a (no text was sent) |
+| openresponses-client | yes | n/a (no text was sent) |
+| openai-agents | yes | n/a (no text was sent) |
+| litellm | yes | n/a (no text was sent) |
+| langchain-openai | yes | n/a (no text was sent) |
+| any-llm | yes | n/a (no text was sent) |
+| openai-python | yes | n/a (no text was sent) |
+| llama-index | no | n/a (no text was sent) |
+| openresponses-python | yes | n/a (no text was sent) |
+
+### truncated_stream (robustness, not in the score; text sent: "Hello, ")
+
+| Library | Knows it failed or was cut off | Keeps the partial text |
+|---|---|---|
+| pydantic-ai | no | yes, in the recorded result |
+| openresponses-client | yes | not in the recorded result; streamed events not measured |
+| openai-agents | yes | not in the recorded result; streamed events not measured |
+| litellm | yes | not in the recorded result; streamed events not measured |
+| langchain-openai | no | yes, in the recorded result |
+| any-llm | no | not in the recorded result; streamed events not measured |
+| openai-python | yes | not in the recorded result; streamed events not measured |
+| llama-index | no | yes, in the recorded result |
+| openresponses-python | no | yes, in the recorded result |
 
 ## What each failure looked like
 

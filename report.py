@@ -9,7 +9,8 @@
        success"; raising is a normal way to say it failed).
     3. response_incomplete passes if the user can tell the answer was cut off: status incomplete, OR an error whose
        message says incomplete / max_output_tokens (same idea as rule 2, applied evenly after Critic's review).
-       Whether the partial text still reaches the user is reported as a separate note, not scored.
+       Whether the partial text still reaches the user is reported in a separate, unscored pair of columns
+    (terminal-state vs partial-output), not mixed into the headline score.
 Headline = MUST + SSE cases. SHOULD and ROBUST are shown separately.
 """
 import json, sys
@@ -63,10 +64,98 @@ out = ["# Scorecard", "", "Behaviour against our 17 spec-derived cases (11 MUST 
        "|---|---|---|---|---|---|---|"]
 for ad, lib, lk, sh, ro, fails, nc in rows:
     out.append(f"| {lib} | {ad}/17 | {lk}/17 | {nc} | {sh} | {ro} | {', '.join(fails) or '-'} |")
-lost = [lib for lib in d if d[lib]["response_incomplete"]["got"].get("raised")
-        and d[lib]["response_incomplete"]["got"].get("text") != "Hello, wor"]
-out += ["", "**Partial text lost on a cut-off answer** (not scored): " + (", ".join(sorted(lost)) or "none") +
-        ". These raise an error, so the text already streamed (\"Hello, wor\") is not in the final result."]
+# --- Unscored dimensions for cut-off / failed cases -----------------
+# "Knows it failed or was cut off" is the same terminal-state rule already used for the adjusted score
+# (and for the ROBUST column on truncated_stream). It is not a new judgement.
+# "Keeps the partial text" uses only results/scorecard.json (adapter-recorded final text) and, where
+# that text is missing, repro/OUTPUT.txt for streamed events. If streamed events were not measured,
+# we say so rather than guessing. Headline scores are unchanged.
+EXPECTED_PARTIAL = {
+    "response_incomplete": "Hello, wor",
+    "truncated_stream": "Hello, ",
+}
+# (library, case) -> text seen in streamed events, from repro/OUTPUT.txt
+REPRO_STREAM_TEXT = {
+    ("openai-python", "response_incomplete"): "Hello, wor",
+    ("openai-agents", "response_incomplete"): "Hello, wor",
+}
+
+
+def knows_terminal(lib, cid, got):
+    if cid == "response_failed":
+        return bool(got.get("raised")) or got.get("status") == "failed"
+    if cid == "response_incomplete":
+        msg = str(got.get("raised") or "").lower()
+        return got.get("status") == "incomplete" or ("incomplete" in msg or "max_output_tokens" in msg)
+    if cid == "truncated_stream":
+        return bool(got.get("raised")) or got.get("status") in ("failed", "incomplete")
+    raise ValueError(cid)
+
+
+def keeps_partial(lib, cid, got):
+    if cid == "response_failed":
+        return "n/a (no text was sent)"
+    expected = EXPECTED_PARTIAL[cid]
+    text = got.get("text")
+    if text == expected:
+        return "yes, in the recorded result"
+    if text:
+        return f"partial, recorded result is {text!r}"
+    stream = REPRO_STREAM_TEXT.get((lib, cid))
+    if stream == expected:
+        return "yes, from streamed events (not in the final result)"
+    if stream:
+        return f"partial, streamed events were {stream!r} (not in the final result)"
+    return "not in the recorded result; streamed events not measured"
+
+
+def yn(ok):
+    return "yes" if ok else "no"
+
+
+out += ["",
+        "## Cut-off and failed answers: two separate questions",
+        "",
+        "The headline score only counts whether the app can tell something went wrong (terminal-state).",
+        "Whether the library also keeps the text generated before the interruption is reported here, and is",
+        "not part of the score. Keeping that partial text is only useful when the library also signals the",
+        "cut-off: returning it as if the answer were complete is worse than raising an error.",
+        "On the truncated-stream robustness case, langchain-openai, pydantic-ai, llama-index and",
+        "openresponses-python return the partial text as if it were complete.",
+        "",
+        "Sources: the recorded result is `text` in `results/scorecard.json`. For openai-python and",
+        "openai-agents on `response_incomplete`, streamed-event text comes from `repro/OUTPUT.txt`.",
+        "Where the recorded result has no text and no repro measured the stream, the cell says so.",
+        "",
+        "### response_incomplete (model stopped early; text sent: \"Hello, wor\")",
+        "",
+        "| Library | Knows it failed or was cut off | Keeps the partial text |",
+        "|---|---|---|"]
+for _ad, lib, *_rest in rows:
+    got = d[lib]["response_incomplete"]["got"]
+    out.append(f"| {lib} | {yn(knows_terminal(lib, 'response_incomplete', got))} | {keeps_partial(lib, 'response_incomplete', got)} |")
+
+out += ["",
+        "llama-index's recorded result is the text of the joined stream deltas (see the adapter). The",
+        "standalone repro's high-level `last.message.content` was empty; the text is still in the chunks.",
+        "",
+        "### response_failed (model crashed; no text was sent)",
+        "",
+        "| Library | Knows it failed or was cut off | Keeps the partial text |",
+        "|---|---|---|"]
+for _ad, lib, *_rest in rows:
+    got = d[lib]["response_failed"]["got"]
+    out.append(f"| {lib} | {yn(knows_terminal(lib, 'response_failed', got))} | {keeps_partial(lib, 'response_failed', got)} |")
+
+out += ["",
+        "### truncated_stream (robustness, not in the score; text sent: \"Hello, \")",
+        "",
+        "| Library | Knows it failed or was cut off | Keeps the partial text |",
+        "|---|---|---|"]
+for _ad, lib, *_rest in rows:
+    got = d[lib]["truncated_stream"]["got"]
+    out.append(f"| {lib} | {yn(knows_terminal(lib, 'truncated_stream', got))} | {keeps_partial(lib, 'truncated_stream', got)} |")
+
 out += ["", "## What each failure looked like", ""]
 for _, lib, _, _, _, fails, _ in rows:
     for c in fails:
