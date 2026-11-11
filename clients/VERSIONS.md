@@ -1,6 +1,6 @@
 # Client libraries and versions (recorded 2026-11-10, before scoring)
 
-Each Python library is installed alone in its own environment under envs/<name> with uv (Python 3.12, except openresponses-client which needs 3.14), so dependency pins can't interfere. Versions are what pip resolved:
+Each Python library is installed alone in its own environment under envs/<name> with uv (Python 3.12, except openresponses-client which needs 3.14), so dependency pins can't interfere. Versions are what pip resolved. Scoring was run on Debian GNU/Linux 13 (trixie).
 
 | Library | Version | Adapter |
 |---|---|---|
