@@ -60,10 +60,10 @@ out = ["# Scorecard", "", "Behaviour against our 17 spec-derived cases (11 MUST 
        "libraries wrap the OpenAI Python SDK, so their results are not independent. The locked score uses the "
        "expectations exactly as written before any library ran; the adjusted score applies the three logged changes "
        "in `report.py`. Failures with the same error count as one root cause.", "",
-       "| Library | Adjusted | Locked | Root causes | SHOULD: unknown item | ROBUST: cut-off stream | Failed (adjusted) |",
+       "| Library | Locked | Adjusted | Root causes | SHOULD: unknown item | ROBUST: cut-off stream | Failed (adjusted) |",
        "|---|---|---|---|---|---|---|"]
 for ad, lib, lk, sh, ro, fails, nc in rows:
-    out.append(f"| {lib} | {ad}/17 | {lk}/17 | {nc} | {sh} | {ro} | {', '.join(fails) or '-'} |")
+    out.append(f"| {lib} | {lk}/17 | {ad}/17 | {nc} | {sh} | {ro} | {', '.join(fails) or '-'} |")
 # --- Unscored dimensions for cut-off / failed cases -----------------
 # "Knows it failed or was cut off" is the same terminal-state rule already used for the adjusted score
 # (and for the ROBUST column on truncated_stream). It is not a new judgement.

@@ -2,16 +2,16 @@
 
 Behaviour against our 17 spec-derived cases (11 MUST + 6 SSE). This is not an overall quality ranking, and several libraries wrap the OpenAI Python SDK, so their results are not independent. The locked score uses the expectations exactly as written before any library ran; the adjusted score applies the three logged changes in `report.py`. Failures with the same error count as one root cause.
 
-| Library | Adjusted | Locked | Root causes | SHOULD: unknown item | ROBUST: cut-off stream | Failed (adjusted) |
+| Library | Locked | Adjusted | Root causes | SHOULD: unknown item | ROBUST: cut-off stream | Failed (adjusted) |
 |---|---|---|---|---|---|---|
-| pydantic-ai | 17/17 | 14/17 | 0 | pass | fail | - |
+| pydantic-ai | 14/17 | 17/17 | 0 | pass | fail | - |
 | openresponses-client | 17/17 | 17/17 | 0 | pass | pass | - |
-| openai-agents | 17/17 | 0/17 | 0 | pass | pass | - |
-| litellm | 17/17 | 16/17 | 0 | pass | pass | - |
-| langchain-openai | 17/17 | 16/17 | 0 | pass | fail | - |
+| openai-agents | 0/17 | 17/17 | 0 | pass | pass | - |
+| litellm | 16/17 | 17/17 | 0 | pass | pass | - |
+| langchain-openai | 16/17 | 17/17 | 0 | pass | fail | - |
 | any-llm | 17/17 | 17/17 | 0 | pass | fail | - |
-| openai-python | 15/17 | 14/17 | 2 | pass | pass | unknown_vendor_event_first, response_incomplete |
-| llama-index | 15/17 | 0/17 | 2 | pass | fail | response_failed, response_incomplete |
+| openai-python | 14/17 | 15/17 | 2 | pass | pass | unknown_vendor_event_first, response_incomplete |
+| llama-index | 0/17 | 15/17 | 2 | pass | fail | response_failed, response_incomplete |
 | openresponses-python | 3/17 | 3/17 | 2 | fail | fail | baseline, unknown_vendor_event, unknown_vendor_event_first, extra_fields, logprobs_absent, function_call_split_args, function_call_unicode_args, byte_by_byte, utf8_split_across_chunks, crlf_newlines, cr_newlines, comment_lines, multiline_data, multiple_content_parts |
 
 ## Cut-off and failed answers: two separate questions

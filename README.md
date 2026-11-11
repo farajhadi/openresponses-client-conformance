@@ -15,17 +15,19 @@ independent of each other.
 
 ## What we found
 
-| Library | Version | Score (adjusted) | Score (locked) | Distinct problems |
+| Library | Version | Score (locked) | Score (adjusted) | Distinct problems |
 |---|---|---|---|---|
 | openresponses-client | 0.0.2 | 17/17 | 17/17 | 0 |
-| litellm | 1.108.4 | 17/17 | 16/17 | 0 |
-| langchain-openai | 1.7.4 | 17/17 | 16/17 | 0 |
+| litellm | 1.108.4 | 16/17 | 17/17 | 0 |
+| langchain-openai | 1.7.4 | 16/17 | 17/17 | 0 |
 | any-llm-sdk | 1.48.0 | 17/17 | 17/17 | 0 |
-| pydantic-ai-slim | 2.66.0 | 17/17 | 14/17 | 0 |
-| openai-agents | 0.24.0 | 17/17 | 0/17 | 0 |
-| openai (Python SDK) | 3.48.0 | 15/17 | 14/17 | 2 |
-| llama-index-llms-openai | 0.8.3 | 15/17 | 0/17 | 2 |
+| pydantic-ai-slim | 2.66.0 | 14/17 | 17/17 | 0 |
+| openai-agents | 0.24.0 | 0/17 | 17/17 | 0 |
+| openai (Python SDK) | 3.48.0 | 14/17 | 15/17 | 2 |
+| llama-index-llms-openai | 0.8.3 | 0/17 | 15/17 | 2 |
 | openresponses-python | 0.1.4 | 3/17 | 3/17 | 2 |
+
+The large locked-to-adjusted swings for openai-agents (0/17 to 17/17) and llama-index (0/17 to 15/17) are mainly because those two libraries never expose a response status, so the locked rule fails every case that expected one. The adjusted rule skips the status check on success cases, and counts raising an error as correctly reporting a failed or cut-off answer.
 
 The **locked** score uses the expected results exactly as written before any library ran. The **adjusted** score
 applies three rule changes made afterwards, each logged with its reason in [`plan/PLAN.md`](plan/PLAN.md) (summary
