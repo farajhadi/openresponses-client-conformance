@@ -6,7 +6,7 @@ and it allows a few awkward-but-legal things: an optional `[DONE]` line at the e
 extra fields, a function call's arguments split mid-way, different line endings, and answers that fail or get cut off.
 
 This project checks how **9 popular Python libraries** behave when a server sends exactly those things. A fake server
-replays 19 hand-written cases byte for byte, and a small script per library uses it the way the library's own docs
+replays 19 hand-written cases byte for byte (17 count toward the score), and a small script per library uses it the way the library's own docs
 show. The fake server needs no API key and makes no model calls, so everything is free and runs offline.
 
 **Read this as "behaviour against our 17 spec-derived cases", not a quality ranking.** The cases cover the corners of
